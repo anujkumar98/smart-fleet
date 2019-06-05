@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+    <title>Map</title>
 
+</head>
+
+
+<body>
+<div class="container">
+            <div class="sidenav text-white">
+                    <a class="h3 text-sidenav">Legend<br></a>
+                    <a><img src="assets/green.png" alt=""><br><div class="text-sidenav"><br>Running<br></div></a>
+                    <a><img src="assets/yellow.png"><div class="text-sidenav"><br>Overspeeding<br></div></a>
+                    <a><img src="assets/blue.png"><div class="text-sidenav"><br>Stopped<br></div></a>
+                    <a><img src="assets/red.png"><div class="text-sidenav"><br>Maintenance<br></div></a>
+                  </div>
+
+            <div class="display-3" >SMART FLEET MANAGEMENT</div>
+            <div id="map" class="right-element"></div>
+            <div class="sidenav-right text-white">
+                    <a class="h3 text-sidenav">Legend<br></a>
+                    <a><img src="assets/green.png" alt=""><br><div class="text-sidenav"><br>Running<br></div></a>
+                    <a><img src="assets/yellow.png"><div class="text-sidenav"><br>Overspeeding<br></div></a>
+                    <a><img src="assets/blue.png"><div class="text-sidenav"><br>Stopped<br></div></a>
+                    <a><img src="assets/red.png"><div class="text-sidenav"><br>Maintenance<br></div></a>
+                  </div>
+                </div>
+
+    <script>
+            var map;
+            var marker;
+            function initMap() {
+              var pos={lat: 22.7977552, lng: 86.1874132};
+              map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 22.7977552, lng: 86.1874132},
+                zoom: 15
+              });
+              marker=new google.maps.Marker({position:pos,map:map});
+            }
+
+    </script>
+         <!-- bootstrap -->
+    <script src="js/bootstrap.js"></script>
+    <!-- jQuery library -->
+    <script src="js/jquery-min.js"></script>
+    <!-- popper-js -->
+    <script src="js/popper-min.js"></script>
+    <!-- Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbaOxnzOfhcCTvgv_KWYvJMhr-NP7XnSk&callback=initMap"
+    async defer></script>
 </body>
+
 </html>
