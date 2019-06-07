@@ -12,10 +12,11 @@
 </head>
 
 
-<body>
-
-    <div class="container">
-        <div class="sidenav text-white">
+<body class="bg-dark">
+        <div class="display-3 bg-dark  d-flex justify-content-center text-white">SMART FLEET MANAGEMENT</div>
+    <div class="row d-flex justify-content-start">
+        <div class="col-2" style="margin-top:25px;">
+        <div class="sidenav text-white bg-dark">
             <a class="h3 text-sidenav">Legend<br></a>
             <a><img src="assets/green.png" alt=""><br>
                 <div class="text-sidenav"><br>Running<br></div>
@@ -30,16 +31,32 @@
                 <div class="text-sidenav"><br>Maintenance<br></div>
             </a>
         </div>
-
-        <div class="display-3 bg-dark justify-content-center">SMART FLEET MANAGEMENT</div>
+    </div>
+    <div class="col-7">
         <div id="map" class="right-element"></div>
-        <!-- <div class="sidenav-right text-white">
-                    <a class="h3 text-sidenav">Legend<br></a>
-                    <a><img src="assets/green.png" alt=""><br><div class="text-sidenav"><br>Running<br></div></a>
-                    <a><img src="assets/yellow.png"><div class="text-sidenav"><br>Overspeeding<br></div></a>
-                    <a><img src="assets/blue.png"><div class="text-sidenav"><br>Stopped<br></div></a>
-                    <a><img src="assets/red.png"><div class="text-sidenav"><br>Maintenance<br></div></a>
-                  </div> -->
+    </div>
+
+    <div class="col-3">
+            <div class="card" style="margin-right:15px; margin-top:30px;">
+                    <div class="card-body">
+                      <h5 class="card-title">Routes</h5>
+
+                      <div class="radio">
+                            <label><input type="radio" name="optradio" >1A</label>
+                          </div>
+                          <div class="radio">
+                            <label><input type="radio" name="optradio">2A</label>
+                          </div>
+                          <div class="radio">
+                            <label><input type="radio" name="optradio">2B</label>
+                          </div>
+                          <div class="radio">
+                                <label><input type="radio" name="optradio">3A</label>
+                              </div>
+                    </div>
+                  </div>
+
+    </div>
     </div>
 
     <script>
@@ -52,7 +69,7 @@
             var pos = { lat: 22.7977552, lng: 86.1874132 };
             map = new google.maps.Map(document.getElementById('map'), {
                 center: { lat: 22.790026, lng: 86.198168 },
-                zoom: 14.20
+                zoom: 14
             });
             var myStyle = [
       {
