@@ -42,16 +42,16 @@
                       <h5 class="card-title">Routes</h5>
 
                       <div class="radio">
-                            <label><input type="radio" name="optradio" >1A</label>
+                            <label><input type="radio" id="1A" name="route">1A</label>
                           </div>
                           <div class="radio">
-                            <label><input type="radio" name="optradio">2A</label>
+                            <label><input type="radio" id="2A" name="route">2A</label>
                           </div>
                           <div class="radio">
-                            <label><input type="radio" name="optradio">2B</label>
+                            <label><input type="radio" id="2B" name="route">2B</label>
                           </div>
                           <div class="radio">
-                                <label><input type="radio" name="optradio">3A</label>
+                                <label><input type="radio" id="3A" name="route">3A</label>
                               </div>
                     </div>
                   </div>
@@ -325,7 +325,13 @@
             fillOpacity: 0
         });
         plotpoints.setMap(map);
-        }
+
+
+
+    }
+    if(document.readyState == "complete"){
+        alert("abdc");
+    }
     </script>
     <!-- bootstrap -->
     <script src="js/bootstrap.js"></script>
@@ -336,6 +342,8 @@
     <!-- Google Maps -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbaOxnzOfhcCTvgv_KWYvJMhr-NP7XnSk&callback=initMap"
         async defer></script>
+
+    <script src="js/route-selector.js"></script>
 </body>
 
 </html>
