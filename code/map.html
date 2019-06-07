@@ -13,50 +13,51 @@
 
 
 <body class="bg-dark">
-        <div class="display-3 bg-dark  d-flex justify-content-center text-white">SMART FLEET MANAGEMENT</div>
+    <div class="display-3 bg-dark  d-flex justify-content-center text-white">SMART FLEET MANAGEMENT</div>
     <div class="row d-flex justify-content-start">
         <div class="col-2" style="margin-top:25px;">
-        <div class="sidenav text-white bg-dark">
-            <a class="h3 text-sidenav">Legend<br></a>
-            <a><img src="assets/green.png" alt=""><br>
-                <div class="text-sidenav"><br>Running<br></div>
-            </a>
-            <a><img src="assets/yellow.png">
-                <div class="text-sidenav"><br>Overspeeding<br></div>
-            </a>
-            <a><img src="assets/blue.png">
-                <div class="text-sidenav"><br>Stopped<br></div>
-            </a>
-            <a><img src="assets/red.png">
-                <div class="text-sidenav"><br>Maintenance<br></div>
-            </a>
+            <div class="sidenav text-white bg-dark">
+                <a class="h3 text-sidenav">Legend<br></a>
+                <a><img src="assets/green.png" alt=""><br>
+                    <div class="text-sidenav"><br>Running<br></div>
+                </a>
+                <a><img src="assets/yellow.png">
+                    <div class="text-sidenav"><br>Overspeeding<br></div>
+                </a>
+                <a><img src="assets/blue.png">
+                    <div class="text-sidenav"><br>Stopped<br></div>
+                </a>
+                <a><img src="assets/red.png">
+                    <div class="text-sidenav"><br>Maintenance<br></div>
+                </a>
+            </div>
         </div>
-    </div>
-    <div class="col-7">
-        <div id="map" class="right-element"></div>
-    </div>
+        <div class="col-7">
+            <div id="map" class="right-element"></div>
+        </div>
 
-    <div class="col-3">
+        <div class="col-3">
             <div class="card" style="margin-right:15px; margin-top:30px;">
-                    <div class="card-body">
-                      <h5 class="card-title">Routes</h5>
+                <div class="card-body">
+                    <h5 class="card-title">Routes</h5>
+                    <form id="mainForm" name="mainForm">
+                        <div class="radio">
+                            <label><input type="radio" id="1A" value="1A" name="route">1A</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" id="2A" value="2A" name="route">2A</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" id="2B" value="2B" name="route">2B</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" id="3A" value="3A" name="route">3A</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
-                      <div class="radio">
-                            <label><input type="radio" id="1A" name="route">1A</label>
-                          </div>
-                          <div class="radio">
-                            <label><input type="radio" id="2A" name="route">2A</label>
-                          </div>
-                          <div class="radio">
-                            <label><input type="radio" id="2B" name="route">2B</label>
-                          </div>
-                          <div class="radio">
-                                <label><input type="radio" id="3A" name="route">3A</label>
-                              </div>
-                    </div>
-                  </div>
-
-    </div>
+        </div>
     </div>
 
     <script>
@@ -72,158 +73,158 @@
                 zoom: 14
             });
             var myStyle = [
-      {
-          "featureType": "landscape.man_made",
-          "elementType": "geometry.fill",
-          "stylers": [
-              {
-                  "color": "#ece2d9"
-              }
-          ]
-      },
-    {
-        "featureType": "landscape.natural",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "visibility": "on"
-            },
-            {
-                "color": "#EBE5E0"
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.park",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.park",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#ccdca1"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.sports_complex",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "hue": "#ff0000"
-            },
-            {
-                "saturation": -100
-            },
-            {
-                "lightness": 99
-            }
+                {
+                    "featureType": "landscape.man_made",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#ece2d9"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "landscape.natural",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "visibility": "on"
+                        },
+                        {
+                            "color": "#EBE5E0"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "visibility": "on"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.park",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "visibility": "on"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.park",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#ccdca1"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.sports_complex",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "visibility": "on"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "hue": "#ff0000"
+                        },
+                        {
+                            "saturation": -100
+                        },
+                        {
+                            "lightness": 99
+                        }
 
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "color": "#808080"
-            },
-            {
-                "lightness": 54
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#767676"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "labels.text.stroke",
-        "stylers": [
-            {
-                "color": "#ffffff"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "all",
-        "stylers": [
-            {
-                "saturation": 43
-            },
-            {
-                "lightness": -11
-            },
-            {
-                "hue": "#0088ff"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    }
-    , {
-        featureType: "administrative", elementType: "labels",
-        stylers: [{ visibility: "off" }]
-    },
-{
-    featureType: "poi",
-    elementType: "labels",
-    stylers: [{ visibility: "off" }]
-}, {
-    featureType: "water",
-    elementType: "labels",
-    stylers: [{ visibility: "off" }]
-}, {
-    featureType: "road", elementType: "labels",
-    stylers: [
-    { visibility: "off" }
-    ]
-},
-{
-    featureType: "airport", elementType: "labels",
-    stylers: [
-    { visibility: "off" }
-    ]
-}
-    ];
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "geometry.stroke",
+                    "stylers": [
+                        {
+                            "color": "#808080"
+                        },
+                        {
+                            "lightness": 54
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#767676"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "labels.text.stroke",
+                    "stylers": [
+                        {
+                            "color": "#ffffff"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "water",
+                    "elementType": "all",
+                    "stylers": [
+                        {
+                            "saturation": 43
+                        },
+                        {
+                            "lightness": -11
+                        },
+                        {
+                            "hue": "#0088ff"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "water",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                }
+                , {
+                    featureType: "administrative", elementType: "labels",
+                    stylers: [{ visibility: "off" }]
+                },
+                {
+                    featureType: "poi",
+                    elementType: "labels",
+                    stylers: [{ visibility: "off" }]
+                }, {
+                    featureType: "water",
+                    elementType: "labels",
+                    stylers: [{ visibility: "off" }]
+                }, {
+                    featureType: "road", elementType: "labels",
+                    stylers: [
+                        { visibility: "off" }
+                    ]
+                },
+                {
+                    featureType: "airport", elementType: "labels",
+                    stylers: [
+                        { visibility: "off" }
+                    ]
+                }
+            ];
             marker = new google.maps.Marker({ position: pos, map: map, icon: "assets/red-small.png" });
 
             var mapType = new google.maps.StyledMapType(myStyle, styleOptions);
@@ -318,21 +319,87 @@
 
             ];
 
-        var plotpoints = new google.maps.Polygon({
-            paths: triangleCoords,
-            strokeOpacity: 0.8,
-            strokeWeight: 2,
-            fillOpacity: 0
-        });
-        plotpoints.setMap(map);
+            var plotpoints = new google.maps.Polygon({
+                paths: triangleCoords,
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillOpacity: 0
+            });
+            plotpoints.setMap(map);
 
 
 
-    }
-    if(document.readyState == "complete"){
-        alert("abdc");
-    }
+        }
+        var busroute;
+        document.mainForm.onclick = function () {
+            var routes = document.mainForm.route.value;
+            if (routes == '1A') {
+                if (busroute != null) {
+                    busroute.setMap(null);
+                }
+                var route = [
+                    { lat: 22.7977552, lng: 86.1874132 },
+                    { lat: 22.800022, lng: 86.198168 }];
+                busroute = new google.maps.Polyline({
+                    path: route,
+                    geodesic: true,
+                    strokeColor: '#000111',
+                    strokeOpacity: 1.0,
+                    strokeWeight: 2
+                });
+            }
+            else if (routes == '2A') {
+                if (busroute != null) {
+                    busroute.setMap(null);
+                }
+                var route = [
+                    { lat: 22.7977552, lng: 86.1874132 },
+                    { lat: 22.800022, lng: 86.198168 }];
+                busroute = new google.maps.Polyline({
+                    path: route,
+                    geodesic: true,
+                    strokeColor: '#333333',
+                    strokeOpacity: 1.0,
+                    strokeWeight: 2
+                });
+            }
+            else if (routes == '2B') {
+                if (busroute != null) {
+                    busroute.setMap(null);
+                }
+                var route = [
+                    { lat: 22.7977552, lng: 86.1874132 },
+                    { lat: 22.810022, lng: 86.198168 }];
+                busroute = new google.maps.Polyline({
+                    path: route,
+                    geodesic: true,
+                    strokeColor: '#AAA222',
+                    strokeOpacity: 1.0,
+                    strokeWeight: 2
+                });
+            }
+            else if (routes == '3A') {
+                if (busroute != null) {
+                    busroute.setMap(null);
+                }
+                var route = [
+                    { lat: 22.7977552, lng: 86.1874132 },
+                    { lat: 22.800022, lng: 86.198168 }];
+                busroute = new google.maps.Polyline({
+                    path: route,
+                    geodesic: true,
+                    strokeColor: '#FF0000',
+                    strokeOpacity: 1.0,
+                    strokeWeight: 2
+                });
+            }
+            busroute.setMap(map);
+        }
+
+
+
     </script>
+
     <!-- bootstrap -->
     <script src="js/bootstrap.js"></script>
     <!-- jQuery library -->

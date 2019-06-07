@@ -6,47 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="/__/firebase/6.1.0/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#reserved-urls -->
-
-    <!-- Initialize Firebase -->
-    <script src="/__/firebase/init.js"></script>
-    <title>Login</title>
 </head>
 
-<body class="bg-dark">
-    <div class="container ">
+<body class="bg-dark" style="overflow:hidden;">
         <header class="display-3 d-flex justify-content-center text-white"
-            style="padding:20px;margin-top:80px;margin-bottom:100px;">
-            SMART FLEET MANAGEMENT
+            style="padding:20px;margin-top:20px;margin-bottom:20px;">
+            Smart Vechical Management
         </header>
-        <form>
-            <div class="row  d-flex justify-content-center">
-                <div class="col-7 bg-dark">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1" class="text-white">Email address</label>
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                            placeholder="Enter email">
-                    </div>
-                </div>
-                <div class="col-7">
-                    <div class="form-group">
-                        <label for="exampleInputPassword1" class="text-white">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password">
-                    </div>
-                </div>
-                <div class="col-7 d-flex justify-content-center" style="margin-bottom:20px;">
-                    <button type="submit" id="btn-login" class="btn btn-primary">Login</button>
-                </div>
-                <div class="col-7 d-flex justify-content-center">
-                    <button type="submit" id="btn-register" class="btn btn-primary">Register Here</button>
-                </div>
+        <div class="container ">
+        <div class="container bg-primary rounded-sm w-75" style="padding:40px;box-shadow: 10px 10px #161901;">
+            <form>
+                <div class="row  d-flex justify-content-center">
 
-            </div>
-        </form>
+                        <div class= "h4 col-7 text-white d-flex justify-content-center">Login</div>
+                    <div class="col-7">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="text-white">Email address</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                                placeholder="Enter email">
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" class="text-white">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                    </div>
+
+                    <div class="container" style="margin-left:220px;">
+                        <div class="col-7" style="margin-bottom:20px;margin-top: 20px;">
+                            <button type="submit" id="btn-login" class="btn btn-warning btn-block" style="box-shadow: 2px 2px #161901;">Login</button>
+                        </div>
+                        <div class="col-7 ">
+                            <button type="submit" id="btn-register" class="btn btn-warning btn-block">Register
+                                Here</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <img src="assets/crane-login.png" style="height:300px;width:300px;margin-top:-230px;margin-left:20px;">
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+            <img src="assets/bus-login.png" style="height:250px; width:300px;margin-top:-170px;margin-right:20px;">
+        </div>
+
     </div>
     <!-- bootstrap -->
     <script src="js/bootstrap.js"></script>
@@ -54,25 +61,6 @@
     <script src="js/jquery-min.js"></script>
     <!-- popper-js -->
     <script src="js/popper-min.js"></script>
-    <!-- Firebase -->
-    <script>
-        var admin = require('firebase-admin');
-        import * as admin from 'firebase-admin';
-        document.getElementById('btn-login').addEventListener('click',function(){
-
-        var email = document.getElementById('email').value;
-        var password = document.getElementById('password').value;
-
-        //Create User with Email and Password
-        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            console.log(errorCode);
-            console.log(errorMessage);
-        }),false
-        });
-    </script>
 </body>
 
 </html>
