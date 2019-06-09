@@ -12,7 +12,7 @@
 </head>
 
 
-<body class="bg-dark">
+<body class="bg-dark" style="overflow-x:hidden;">
     <div class="display-3 bg-dark  d-flex justify-content-center text-white">SMART FLEET MANAGEMENT</div>
     <div class="row d-flex justify-content-start">
         <div class="col-2" style="margin-top:25px;">
@@ -37,29 +37,65 @@
         </div>
 
         <div class="col-3">
-            <div class="card" style="margin-right:15px; margin-top:30px;">
+                <div class="card" style="margin-bottom:30px;margin-top:30px;">
+                        <div class="card-body">
+                            <h5 class="card-title">User Details</h5>
+                            <p id="userName">Name:</p>
+                                    <button class="btn btn-warning" onclick="logout();">
+                                        Logout
+                                    </button>
+                </div>
+                </div>
+            <div class="card" style=" margin-top:30px;">
                 <div class="card-body">
                     <h5 class="card-title">Routes</h5>
                     <form id="mainForm" name="mainForm">
-                        <div class="radio">
-                            <label><input type="radio" id="1A" value="1A" name="route">1A</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" id="2A" value="2A" name="route">2A</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" id="2B" value="2B" name="route">2B</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" id="3A" value="3A" name="route">3A</label>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="radio">
+                                    <label><input type="radio" id="route1" value="route1" name="route">Route 1</label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="radio">
+                                    <label><input type="radio" id="route2" value="route2" name="route">Route 2</label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="radio">
+                                    <label><input type="radio" id="route3" value="route3" name="route">Route 3</label>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
+
             </div>
+        </div>
+
+
 
         </div>
     </div>
-
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
+    <script src="js/userDetails.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBp1iZsLLH53hUyU8BbNQu_2Xq6tJi3ICk",
+            authDomain: "smart-fleet-tata-steel.firebaseapp.com",
+            databaseURL: "https://smart-fleet-tata-steel.firebaseio.com",
+            projectId: "smart-fleet-tata-steel",
+            storageBucket: "smart-fleet-tata-steel.appspot.com",
+            messagingSenderId: "26082732514",
+            appId: "1:26082732514:web:f0aac8b3a7f2ca78"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
     <script>
         var map;
         var marker;
@@ -69,8 +105,8 @@
             };
             var pos = { lat: 22.7977552, lng: 86.1874132 };
             map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: 22.790026, lng: 86.198168 },
-                zoom: 14
+                center: { lat: 22.785026, lng: 86.198168 },
+                zoom: 14.5
             });
             var myStyle = [
                 {
@@ -333,13 +369,29 @@
         var busroute;
         document.mainForm.onclick = function () {
             var routes = document.mainForm.route.value;
-            if (routes == '1A') {
+            if (routes == 'route1') {
                 if (busroute != null) {
                     busroute.setMap(null);
                 }
                 var route = [
-                    { lat: 22.7977552, lng: 86.1874132 },
-                    { lat: 22.800022, lng: 86.198168 }];
+                    { lat: 22.78864, lng: 86.20719 },
+                    { lat: 22.797, lng: 86.20019 },
+                    { lat: 22.79854, lng: 86.1908 },
+                    { lat: 22.79849, lng: 86.19794 },
+                    { lat: 22.79356, lng: 86.20408 },
+                    { lat: 22.79158, lng: 86.20711 },
+                    { lat: 22.79194, lng: 86.21119 },
+                    { lat: 22.78964, lng: 86.21222 },
+                    { lat: 22.78811, lng: 86.21144 },
+                    { lat: 22.78814, lng: 86.20928 },
+                    { lat: 22.78814, lng: 86.20928 },
+                    { lat: 22.78811, lng: 86.21144 },
+                    { lat: 22.79194, lng: 86.21119 },
+                    { lat: 22.79158, lng: 86.20711 },
+                    { lat: 22.79356, lng: 86.20408 },
+                    { lat: 22.79658, lng: 86.19853 },
+                    { lat: 22.79717, lng: 86.19514 }
+                ];
                 busroute = new google.maps.Polyline({
                     path: route,
                     geodesic: true,
@@ -348,7 +400,7 @@
                     strokeWeight: 2
                 });
             }
-            else if (routes == '2A') {
+            else if (routes == 'route2') {
                 if (busroute != null) {
                     busroute.setMap(null);
                 }
@@ -363,7 +415,7 @@
                     strokeWeight: 2
                 });
             }
-            else if (routes == '2B') {
+            else if (routes == 'route3') {
                 if (busroute != null) {
                     busroute.setMap(null);
                 }
@@ -374,21 +426,6 @@
                     path: route,
                     geodesic: true,
                     strokeColor: '#AAA222',
-                    strokeOpacity: 1.0,
-                    strokeWeight: 2
-                });
-            }
-            else if (routes == '3A') {
-                if (busroute != null) {
-                    busroute.setMap(null);
-                }
-                var route = [
-                    { lat: 22.7977552, lng: 86.1874132 },
-                    { lat: 22.800022, lng: 86.198168 }];
-                busroute = new google.maps.Polyline({
-                    path: route,
-                    geodesic: true,
-                    strokeColor: '#FF0000',
                     strokeOpacity: 1.0,
                     strokeWeight: 2
                 });
