@@ -11,7 +11,9 @@ firebase.auth().onAuthStateChanged(function (user) {
 function login() {
     var email = document.getElementById('emailLogin').value;
     var password = document.getElementById('passwordLogin').value;
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+    firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
+        window.open("map.html","_self");
+    }).catch(function (error) {
         var errorCode = error.code;
         var errorMessage = error.message;
         alert(errorCode + " " + errorMessage);
@@ -24,5 +26,4 @@ function login() {
     //     else{
     //         alert("Verify your email.");
     //     }
-    window.open("map.html","_self");
 }

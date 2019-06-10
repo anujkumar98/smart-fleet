@@ -17,6 +17,7 @@ function getDetails() {
         emailVerified = user.emailVerified;
         uid = user.uid;
         document.getElementById("userName").innerHTML=email;
+        alert(name);
 
     }
     if (user != null) {
