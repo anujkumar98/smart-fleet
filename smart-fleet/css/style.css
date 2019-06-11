@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    width:100%;
+}
+#map {
+    margin-top:30px;
+    height: 650px;
+  }
+  .sidenav{
+      margin-left: 20px;
+  }
+  .sidenav img{
+      height: 120px;
+      width: 120px;
+      margin-left: 2px;
+      padding-bottom: -20px;
+      margin-top: 30px;
+  }
+.text-sidenav{
+    margin-top: -30px;
+}
