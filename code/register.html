@@ -12,46 +12,59 @@
 <body class="bg-dark" style="overflow:hidden;">
     <header class="display-3 d-flex justify-content-center text-white"
         style="padding:20px;margin-top:20px;margin-bottom:20px;">
-        Smart Vehical Management
+        Smart Vehicle Management
     </header>
     <div class="container ">
-        <div class="container bg-primary rounded-sm w-75" style="padding:40px;box-shadow: 10px 10px #161901;">
-                <div class="row  d-flex justify-content-center">
-
-                    <div class="h4 col-7 text-white d-flex justify-content-center">Register</div>
-                    <div class="col-7">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1" class="text-white">Email address</label>
-                            <input type="email" class="form-control" id="emailRegister" aria-describedby="emailHelp"
-                                placeholder="Enter email">
+        <div class="container bg-primary rounded-sm w-50" style="padding:40px;box-shadow: 10px 10px #161901;">
+                <div class="row  d-flex justify-content-start">
+                    <div class="col-10">
+                            <div class="form-group">
+                                <label class="text-white">Name</label>
+                                <input type="name" class="form-control" id="nameRegister"
+                                    placeholder="Enter name">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-7">
+                        <div class="col-10">
+                                <div class="form-group">
+                                    <label class="text-white">Email address</label>
+                                    <input type="email" class="form-control" id="emailRegister" aria-describedby="emailHelp"
+                                        placeholder="Enter email">
+                                </div>
+                            </div>
+                        <div class="col-10">
+                                <div class="form-group">
+                                    <label class="text-white">
+                                        Phone No
+                                    </label>
+                                    <input type="number" class="form-control" id="phoneRegister" aria-describedby="emailHelp"
+                                        placeholder="Enter phone no">
+                                </div>
+                            </div>
+                    <div class="col-6">
                         <div class="form-group">
-                            <label for="exampleInputPassword1" class="text-white">Password</label>
+                            <label class="text-white">Password</label>
                             <input type="password" class="form-control" id="passwordRegister" placeholder="Password">
                         </div>
                     </div>
-                    <div class="col-7">
+                    <div class="col-6">
                         <div class="form-group">
-                            <label for="exampleInputPassword1" class="text-white">Confirm Password</label>
+                            <label class="text-white">Confirm Password</label>
                             <input type="password" class="form-control" id="confirmPasswordRegister"
                                 placeholder="Confirm Password">
                         </div>
                     </div>
-                    <div class="container" style="margin-left:220px;">
-                        <div class="col-7" style="margin-bottom:20px;margin-top: 20px;">
+                        <div class="col-6" style="margin-top:10px;">
                             <button class="btn btn-warning btn-block" type="submit" id="btn-register"
                                 onclick="register();" style="border-radius: 0px;">
                                 Register
                             </button>
                         </div>
-                        <div class="col-7 ">
+                        <div class="col-6" style="margin-top:10px;">
                             <a class="btn btn-warning btn-block" type="submit" id="btn-register" href="login.html">
                                 Already Registered
                             </a>
                         </div>
-                    </div>
+
                 </div>
             </div>
         </div>
