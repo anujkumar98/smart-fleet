@@ -15,24 +15,24 @@
 <body class="bg-dark" style="overflow-x:hidden;">
     <div class="display-3 bg-dark  d-flex justify-content-center text-white">SMART FLEET MANAGEMENT</div>
     <div class="row d-flex justify-content-start">
-        <div class="col-2" style="margin-top:25px;">
+        <div class="col-1" style="margin-top:25px;">
             <div class="sidenav text-white bg-dark">
                 <a class="h3 text-sidenav">Legend<br></a>
-                <a><img src="assets/green.png" alt=""><br>
-                    <div class="text-sidenav"><br>Running<br></div>
+                <a><img src="assets/bus_bubble_green.png" alt=""><br>
+                    <div class="text-sidenav d-flex justify-content-center"><br>Running<br></div>
                 </a>
-                <a><img src="assets/yellow.png">
-                    <div class="text-sidenav"><br>Overspeeding<br></div>
+                <a><img src="assets/bus_bubble_red.png">
+                    <div class="text-sidenav d-flex justify-content-center"><br>Overspeeding<br></div>
                 </a>
-                <a><img src="assets/blue.png">
-                    <div class="text-sidenav"><br>Stopped<br></div>
+                <a><img src="assets/bus_red.png">
+                    <div class="text-sidenav d-flex justify-content-center"><br>Stopped<br></div>
                 </a>
-                <a><img src="assets/red.png">
-                    <div class="text-sidenav"><br>Maintenance<br></div>
+                <a><img src="assets/bus_blue.png">
+                    <div class="text-sidenav d-flex justify-content-center"><br>Maintenance<br></div>
                 </a>
             </div>
         </div>
-        <div class="col-7">
+        <div class="col-8">
             <div id="map" class="right-element"></div>
         </div>
 
@@ -262,7 +262,7 @@
                     ]
                 }
             ];
-            marker = new google.maps.Marker({ position: pos, map: map, icon: "assets/red-small.png" });
+            marker = new google.maps.Marker({ position: pos, map: map, icon: "assets/bus_60x40.png" });
 
             var mapType = new google.maps.StyledMapType(myStyle, styleOptions);
             map.mapTypes.set("Dummy Style", mapType);

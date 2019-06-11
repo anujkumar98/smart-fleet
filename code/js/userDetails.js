@@ -17,9 +17,10 @@ function getDetails() {
         emailVerified = user.emailVerified;
         uid = user.uid;
         document.getElementById("userName").innerHTML=email;
-        alert(name);
+        
 
     }
+    alert(email);
     if (user != null) {
         user.providerData.forEach(function (profile) {
           console.log("Sign-in provider: " + profile.providerId);
