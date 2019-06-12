@@ -12,12 +12,12 @@
 </head>
 
 
-<body class="bg-dark" style="overflow-x:hidden;">
-    <div class="display-3 bg-dark  d-flex justify-content-center text-white">SMART FLEET MANAGEMENT</div>
+<body style="overflow-x:hidden; background: #6f8bf0;">
+    <div class="display-4  d-flex justify-content-center text-white">Smart Vehicle Management</div>
     <div class="row d-flex justify-content-start">
         <div class="col-1" style="margin-top:25px;">
-            <div class="sidenav text-white bg-dark">
-                <a class="h3 text-sidenav">Legend<br></a>
+            <div class="sidenav text-white" style="background: #5a71c5; border-radius: 10px">
+                <!-- <a class="h3 text-sidenav-le">Legend<br></a> -->
                 <a><img src="assets/bus_bubble_green.png" alt=""><br>
                     <div class="text-sidenav d-flex justify-content-center"><br>Running<br></div>
                 </a>
@@ -37,7 +37,7 @@
         </div>
 
         <div class="col-3">
-                <div class="card" style="margin-bottom:30px;margin-top:30px;">
+                <div class="card" style="margin-bottom:30px;margin-top:30px; margin-right: 10px;">
                         <div class="card-body">
                             <h5 class="card-title">User Details</h5>
                             <p id="userName">Name:</p>
@@ -47,7 +47,7 @@
                                     </button>
                 </div>
                 </div>
-            <div class="card" style=" margin-top:30px;">
+            <div class="card" style=" margin-top:30px;margin-right: 10px;">
                 <div class="card-body">
                     <h5 class="card-title">Routes</h5>
                     <form id="mainForm" name="mainForm">
@@ -263,9 +263,9 @@
                 }
             ];
             marker = new google.maps.Marker({ position: pos, map: map, icon: "assets/bus_60x40.png" });
-
             var mapType = new google.maps.StyledMapType(myStyle, styleOptions);
             map.mapTypes.set("Dummy Style", mapType);
+
             map.setMapTypeId("Dummy Style");
             var triangleCoords = [
                 new google.maps.LatLng(22.79180245, 86.18749738),
@@ -364,9 +364,15 @@
             });
             plotpoints.setMap(map);
 
+            map.addListener('center-changed', function(){
+                window.setTimeout(function(){
+                    map.panTo(22.785026, 86.198168);
+                }, 1000);
+            }); 
+}
 
 
-        }
+
         var busroute;
         document.mainForm.onclick = function () {
             var routes = document.mainForm.route.value;
@@ -445,7 +451,9 @@
     <!-- popper-js -->
     <script src="js/popper-min.js"></script>
     <!-- Google Maps -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbaOxnzOfhcCTvgv_KWYvJMhr-NP7XnSk&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=
+    
+    AIzaSyDbaOxnzOfhcCTvgv_KWYvJMhr-NP7XnSk&callback=initMap"
         async defer></script>
 
     <script src="js/route-selector.js"></script>
