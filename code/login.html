@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <title>Login</title>
+</head>
+
+<body style="overflow:hidden;background: #6f8bf0;">
+    <header class="display-3 d-flex justify-content-center text-white"
+        style="padding:20px;margin-top:20px;margin-bottom:20px;">
+        Smart Vehicle Management
+    </header>
+    <div class="container ">
+        <div class="container bg-primary rounded-sm w-50" style="padding:40px;box-shadow: 10px 10px #161901;">
+
+            <div class="row  d-flex justify-content-center">
+                <div></div>
+                <div class="col-10">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="text-white">Email address</label>
+                        <input type="email" class="form-control" id="emailLogin" aria-describedby="emailHelp"
+                            placeholder="Enter email">
+                    </div>
+                </div>
+                <div class="col-10">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1" class="text-white">Password</label>
+                        <input type="password" class="form-control" id="passwordLogin" placeholder="Password">
+                    </div>
+                </div>
+                    <div class="col-7" style="margin-top: 20px;">
+                        <button class="btn btn-warning btn-block" type="submit" id="btn-register" onclick="login();"
+                            style="border-radius: 0px;">Login</button>
+                        </div>
+                        <div class="col-7" style="margin-top: 20px;">
+                            <a class=" btn btn-warning btn-block" type="submit" id="btn-register" href="register.html">
+                            Register Here
+                            </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <img src="assets/crane-login.png" style="height:500px;width:500px;margin-top:-126px;margin-left:60px;">
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+            <img src="assets/bus-login.png" style="height:400px; width:500px;margin-top: 4px;margin-right:20px;">
+        </div>
+
+    </div>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBp1iZsLLH53hUyU8BbNQu_2Xq6tJi3ICk",
+            authDomain: "smart-fleet-tata-steel.firebaseapp.com",
+            databaseURL: "https://smart-fleet-tata-steel.firebaseio.com",
+            projectId: "smart-fleet-tata-steel",
+            storageBucket: "smart-fleet-tata-steel.appspot.com",
+            messagingSenderId: "26082732514",
+            appId: "1:26082732514:web:f0aac8b3a7f2ca78"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <!-- register.js for firebase -->
+    <script src="js/login.js"></script>
+    <!-- bootstrap -->
+    <script src="js/bootstrap.js"></script>
+    <!-- jQuery library -->
+    <script src="js/jquery-min.js"></script>
+    <!-- popper-js -->
+    <script src="js/popper-min.js"></script>
+</body>
+
+</html>
