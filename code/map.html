@@ -45,6 +45,29 @@
                                     <button class="btn btn-warning" onclick="logout();">
                                         Logout
                                     </button>
+                                   <!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
                 </div>
                 </div>
             <div class="card" style=" margin-top:30px;margin-right: 10px;">
@@ -72,6 +95,36 @@
                 </div>
 
             </div>
+            <table class="table table-striped" style=" margin-top:30px;margin-right: 10px;">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
         </div>
 
 
@@ -368,7 +421,7 @@
                 window.setTimeout(function(){
                     map.panTo(22.785026, 86.198168);
                 }, 1000);
-            }); 
+            });
 }
 
 
@@ -452,7 +505,7 @@
     <script src="js/popper-min.js"></script>
     <!-- Google Maps -->
     <script src="https://maps.googleapis.com/maps/api/js?key=
-    
+
     AIzaSyDbaOxnzOfhcCTvgv_KWYvJMhr-NP7XnSk&callback=initMap"
         async defer></script>
 
