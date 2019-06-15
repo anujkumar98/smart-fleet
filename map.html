@@ -8,19 +8,22 @@
     <link rel="stylesheet" href="css/style.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Map</title>
-
 </head>
 
 
-<body style="overflow:hidden; height: 9700px; background-image: radial-gradient( rgb(255, 255, 255), rgb(59, 59, 224)); background-repeat: no-repeat; background-size: cover;">
+<body
+    style="overflow:hidden; height: 9700px; background-image: radial-gradient( rgb(255, 6, 6), rgb(45, 45, 83)); background-repeat: no-repeat; background-size: cover;">
     <div class="col-12 d-flex justify-content-between">
         <!-- <div class="col-4 display-6 text-white" style="padding: 20px">Welcome: </div> -->
         <div class="d-flex">
             <div class="display-5 text-white" style="padding: 20px">Welcome: </div>
             <div class="display-5 text-white" style="padding: 20px" id="userName"></div>
         </div>
-        <div class="display-4" style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: rgb(27, 24, 168); text-shadow: 2px 2px white;">Smart Vehicle Management</div>
-        <button class="btn-warning" style="padding: 10px; margin-top: 10px;margin-right: -5px;" onclick="logout();">Log Out</button>
+        <div class="display-4"
+            style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: rgb(27, 24, 168); text-shadow: 2px 2px white;">
+            Smart Vehicle Management</div>
+        <button class="btn-warning" style="padding: 10px; margin-top: 10px;margin-right: -5px;" onclick="logout();">Log
+            Out</button>
     </div>
     <div class="row d-flex justify-content-start">
         <div class="col-1" style="margin-top:80px;">
@@ -45,78 +48,109 @@
         </div>
 
         <div class="col-3">
-               <!--  <div class="card" style="margin-bottom:30px;margin-top:30px; margin-right: 10px; text-align: center;">
-                        <div class="card-body">
-                            <h5 class="card-title">User Details</h5>
-                            <p id="userName" style="text-align: left;">Name:</p>
-                            <p id="userEmail" style="text-align: left;">Email:</p>
-                </div>
-                </div> -->
-            <div class="card" style=" margin-top:30px;margin-right: 10px; background: rgba(245, 245, 248, 0.404); text-align: center; color: white;">
+            <div class="card"
+                style=" margin-top:30px;margin-right: 10px; background: rgba(245, 245, 248, 0.404); text-align: center; color: white;">
                 <div class="card-body">
                     <h5 class="card-title">Routes</h5>
                     <form id="mainForm" name="mainForm">
                         <div class="row">
                             <div class="col-4">
                                 <div class="radio">
-                                    <label><input type="radio" class="option-input radio" id="route1" value="route1" name="route"><span>Route 1</span></label>
+                                    <label><input type="radio" class="option-input radio" id="route1" value="route1"
+                                            name="route"><span>Route 1</span></label>
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="radio">
-                                    <label><input type="radio" class="option-input radio" id="route2" value="route2" name="route"><span>Route 2</span></label>
+                                    <label><input type="radio" class="option-input radio" id="route2" value="route2"
+                                            name="route"><span>Route 2</span></label>
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="radio">
-                                    <label><input type="radio" class="option-input radio" id="route3" value="route3" name="route"><span>Route 3</span></label>
+                                    <label><input type="radio" class="option-input radio" id="route3" value="route3"
+                                            name="route"><span>Route 3</span></label>
                                 </div>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-            <table class="table table-striped" id="bustable" style=" margin-top:40px;right:40px; background: rgba(253, 253, 253, 0.384); color: white; visibility: hidden;">
+            <table class="table table-striped" id="bustable"
+                style=" margin-top:40px;right:40px; background: rgba(253, 253, 253, 0.384); color: white;">
                 <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Bus No</th>
-                    <th scope="col">Passengers</th>
-                    <th scope="col">Handle</th>
-                  </tr>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Bus No</th>
+                        <th scope="col">Passengers</th>
+                        <th scope="col">Handle</th>
+                    </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
                 </tbody>
-              </table>
-        </div>
+            </table>
 
+            <div class="wrapper">
+                <div class="wrapper-content">
+                    <button id="myBtn" class="btn btn-warning">Drag and drop</button>
+                </div>
+                <!--  start modal    -->
 
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal_header">
+                            Buses:
+                        </div>
+                        <div class="modal_body">
+                            <div class="row">
+                                <div class="col-6" >
+                                    Running
+                                    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" style=" border: 1px solid black; height:100%;">
+                                        <img src="assets/bus_blue_60x40.png" draggable="true" ondragstart="drag(event)" id="drag1">
+                                    </div>
+                                    </div>
+                                <div class="col-6" >
+                                        Maintenance
+                                        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" style=" border: 1px solid black; height:100%;"></div>
+                            </div>
+                            <div class="col-12 d-flex justify-content-between">
+                                    <button id="btn_close" class="btn btn-warning" style="width:30%; margin-left:35%;margin-top: 5%;">close</button>
+                            </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+                <!--  End modal    -->
 
+            </div>
         </div>
     </div>
+    </div>>
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
     <script src="js/userDetails.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/drag_drop.js"></script>
     <script>
         // Your web app's Firebase configuration
         const firebaseConfig = {
@@ -131,7 +165,6 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
     </script>
-    
     <!-- bootstrap -->
     <script src="js/bootstrap.js"></script>
     <!-- jQuery library -->

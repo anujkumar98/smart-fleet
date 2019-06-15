@@ -2,7 +2,7 @@ var busroute;
 document.mainForm.onclick = function () {
     var routes = document.mainForm.route.value;
     if (routes == 'route1') {
-        document.getElementById("bustable").style.visibility="visible";
+        //document.getElementById("bustable").style.visibility="visible";
         if (busroute != null) {
             busroute.setMap(null);
         }
