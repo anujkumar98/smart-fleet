@@ -29,3 +29,25 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     vertical-align: baseline;
     background: transparent;
 }
+
+.ipbox input[type = "email"],.ipbox input[type = "password"]{
+    border:0;
+    display: block;
+    text-align: center;
+    border-radius: 15px;
+    padding: 10px;
+    background: blue;
+}
+
+#crane{
+    transition: transform .2s;
+}
+#crane:hover{
+    transform: scale(1.08);
+}
+#bus{
+    transition: transform .2s;
+}
+#bus:hover{
+    transform: scale(1.08);
+}
