@@ -13,9 +13,17 @@
 
 
 <body style="overflow-x:hidden; background: #6f8bf0;">
-    <div class="display-4  d-flex justify-content-center text-white">Smart Vehicle Management</div>
+    <div class="col-12 d-flex justify-content-between">
+        <!-- <div class="col-4 display-6 text-white" style="padding: 20px">Welcome: </div> -->
+        <div class="d-flex">
+            <div class="display-5 text-white" style="padding: 20px">Welcome: </div>
+            <div class="display-5 text-white" style="padding: 20px" id="userName"></div>
+        </div>
+        <div class="display-4" style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: rgb(27, 24, 168); text-shadow: 2px 2px white;">Smart Vehicle Management</div>
+        <button class="btn-warning" style="padding: 10px; margin-top: 10px;margin-right: -5px;" onclick="logout();">Log Out</button>
+    </div>
     <div class="row d-flex justify-content-start">
-        <div class="col-1" style="margin-top:25px;">
+        <div class="col-1" style="margin-top:80px;">
             <div class="sidenav text-white" style="background: #5a71c5; border-radius: 10px">
                 <!-- <a class="h3 text-sidenav-le">Legend<br></a> -->
                 <a><img src="assets/bus_bubble_green.png" alt=""><br>
@@ -32,21 +40,21 @@
                 </a>
             </div>
         </div>
-        <div class="col-8">
-            <div id="map" class="right-element"></div>
+        <div class="col-8" style="height: 100%">
+            <div id="map" class="right-element" style="height: 810px"></div>
         </div>
 
         <div class="col-3">
-                <div class="card" style="margin-bottom:30px;margin-top:30px; margin-right: 10px;">
+                <!-- <div class="card" style="margin-bottom:30px;margin-top:30px; margin-right: 10px; text-align: center;">
                         <div class="card-body">
                             <h5 class="card-title">User Details</h5>
-                            <p id="userName">Name:</p>
-                            <p id="userEmail">Email:</p>
-                                    <button class="btn btn-warning" onclick="logout();">
+                            <p id="userName" style="text-align: left;">Name:</p>
+                            <p id="userEmail" style="text-align: left;">Email:</p>
+                            <button class="btn btn-warning" onclick="logout();">
                                         Logout
-                                    </button>
-                </div>
-                </div>
+                            </button>
+                        </div>
+                </div> -->
             <div class="card" style=" margin-top:30px;margin-right: 10px;">
                 <div class="card-body">
                     <h5 class="card-title">Routes</h5>
@@ -360,7 +368,8 @@
                 paths: triangleCoords,
                 strokeOpacity: 0.8,
                 strokeWeight: 2,
-                fillOpacity: 0
+                fillOpacity: 0,
+                strokeColor: "#fff"
             });
             plotpoints.setMap(map);
 
@@ -402,7 +411,7 @@
                 busroute = new google.maps.Polyline({
                     path: route,
                     geodesic: true,
-                    strokeColor: '#000111',
+                    strokeColor: '#5a71c5',
                     strokeOpacity: 1.0,
                     strokeWeight: 2
                 });
