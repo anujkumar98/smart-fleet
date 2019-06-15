@@ -51,3 +51,59 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 #bus:hover{
     transform: scale(1.08);
 }
+
+.option-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 2px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    transition: all .3s ease-out 0s;
+    background: #cbd1d8;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    outline: none;
+    position: relative;
+    z-index: 1000;
+  }
+  .option-input:hover {
+    background: #9faab7;
+  }
+  .option-input:checked {
+    background: #51ffee;
+  }
+  .option-input:checked::before {
+    height: 20px;
+    width: 15px;
+    position: absolute;
+    display: inline-block;
+    font-size: 13px;
+    text-align: center;
+    line-height: 4px;
+  }
+  .option-input:checked::after {
+    -webkit-animation: click-wave 1s;
+    -moz-animation: click-wave 1s;
+    animation: click-wave 1s;
+    background: #40e0d0;
+    content: '';
+    display: block;
+    position: relative;
+    z-index: 100;
+  }
+  .option-input.radio {
+    border-radius: 50%;
+  }
+  .option-input.radio::after {
+    border-radius: 50%;
+  }
