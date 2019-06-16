@@ -265,5 +265,8 @@ var map;
             });
             plotpoints.setMap(map);
 
-            
+
 }
+$(document).ready(function() {
+    $("#MyModal").modal();
+  });
