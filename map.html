@@ -73,7 +73,7 @@
                 </div>
             </div>
             <table class="table table-striped" id="bustable"
-                style=" margin-top:40px;right:40px; background: rgba(253, 253, 253, 0.384); color: white;">
+                style=" margin-top:40px;right:40px; background: rgba(253, 253, 253, 0.384); color: white; visibility: hidden">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -142,40 +142,6 @@
 
             </div>
         </div>
-
-            <div class="wrapper">
-                <div class="wrapper-content">
-                    <button id="myBtn" class="btn btn-warning">Drag and drop</button>
-                </div>
-                <!--  start modal    -->
-
-                <div id="myModal" class="modal">
-                    <div class="modal-content">
-                        <div class="modal_header">
-                            Buses:
-                        </div>
-                        <div class="modal_body">
-                            <div class="row">
-                                <div class="col-6" >
-                                    Running
-                                    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" style=" border: 1px solid black; height:100%;">
-                                        <img src="assets/bus_blue_60x40.png" draggable="true" ondragstart="drag(event)" id="drag1">
-                                    </div>
-                                    </div>
-                                <div class="col-6" >
-                                        Maintenance
-                                        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" style=" border: 1px solid black; height:100%;"></div>
-                            </div>
-                            <div class="col-12 d-flex justify-content-between">
-                                    <button id="btn_close" class="btn btn-warning" style="width:30%; margin-left:35%;margin-top: 5%;">close</button>
-                            </div>
-                    </div>
-                </div>
-                    </div>
-                </div>
-                <!--  End modal    -->
-
-            </div>
         </div>
     </div>
     </div>>
