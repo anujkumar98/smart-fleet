@@ -1,0 +1,159 @@
+body{
+    margin: 0;
+    width:100%;
+}
+#map {
+    margin-top:30px;
+    height: 650px;
+  }
+  .sidenav{
+      margin-left: 20px;
+      height: 680px;
+  }
+  .sidenav img{
+      height: 120px;
+      width: 120px;
+      margin-left: -2px;
+      margin-top: 30px;
+  }
+.text-sidenav{
+    margin-top: -50px;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+.ipbox input[type = "email"],.ipbox input[type = "password"]{
+    border:0;
+    display: block;
+    text-align: center;
+    border-radius: 15px;
+    padding: 10px;
+    background: blue;
+}
+
+#crane{
+    transition: transform .2s;
+}
+#crane:hover{
+    transform: scale(1.08);
+}
+#bus{
+    transition: transform .2s;
+}
+#bus:hover{
+    transform: scale(1.08);
+}
+
+.option-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 2px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    transition: all .3s ease-out 0s;
+    background: #cbd1d8;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    outline: none;
+    position: relative;
+  }
+  .option-input:hover {
+    background: #9faab7;
+  }
+  .option-input:checked {
+    background: #51ffee;
+  }
+  .option-input:checked::before {
+    height: 20px;
+    width: 15px;
+    position: absolute;
+    display: inline-block;
+    font-size: 13px;
+    text-align: center;
+    line-height: 4px;
+  }
+  .option-input:checked::after {
+    -webkit-animation: click-wave 1s;
+    -moz-animation: click-wave 1s;
+    animation: click-wave 1s;
+    background: #40e0d0;
+    content: '';
+    display: block;
+    position: relative;
+  }
+  .option-input.radio {
+    border-radius: 50%;
+  }
+  .option-input.radio::after {
+    border-radius: 50%;
+  }
+
+/* Modal */
+.wrapper{
+  position:relative;
+
+}
+.wrapper .wrapper-content{
+  padding-top:40px;
+}
+.wrapper .modal{
+  z-index:1;
+  background:rgba(20, 16, 16, 0.64);
+  width:100%;
+  min-height:100%;
+  top:0;
+  left:0;
+  bottom:0;
+  position:fixed;
+  display:none;
+  transition:all .3s ease-in-out;
+}
+.wrapper .modal-content{
+ border:1px solid #ccc;
+  max-width:75%;
+  margin:50px auto;
+  animation: 1s modal ;
+  background:#fff;
+  border-radius:6px;
+  width:75%;
+  position:absolute;
+  left:12.5%;
+}
+
+@keyframes modal{
+  from{
+    transform:translateY(-400px);
+  }
+  to{
+    transform:translateY(0);
+  }
+}
+.wrapper .modal .modal_header{
+  border:1px solid rgba(204, 204, 204, 0.3);
+  padding:15px 15px;
+  color:#666;
+  text-align:center;
+}
+.wrapper  .modal .modal_body{
+  padding:40px;
+  color:#666;
+  font-size:20px;
+}
