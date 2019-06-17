@@ -1,5 +1,9 @@
 // initialize varaible
+<<<<<<< HEAD
 var myBtn=document.getElementById("myBtn");
+=======
+var myBtn=document.getElementById("myBtndnd");
+>>>>>>> 318db9937194ba8bea2c43ed5b1fa707e151e28c
 var mymodal=document.getElementById("myModal");
 var close=document.getElementById("btn_close");
 myBtn.onclick=function(){
