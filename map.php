@@ -73,9 +73,20 @@
                     </form>
                 </div>
             </div>
+
+            <script type="text/javascript">
+                                    function hideme(){
+                                         document.getElementById("bustable1").style.visibility="hidden";
+                                         document.getElementById("bustable2").style.visibility="hidden";
+                                    }
+                                </script>
+
+
             <!-- ROUTE 1 -->
             <table class="table table-striped" id="bustable1"
-                        style=" margin-top:40px;right:40px; background: rgba(253, 253, 253, 0.384); color: white;visiblity:hidden;">
+                        style=" margin-top:40px;right:40px; background: rgba(253, 253, 253, 0.384); color: white; visiblity:hidden;">
+
+
             <?php
                         $dbhost = "localhost";
                         $dbuser = "root";
@@ -100,12 +111,19 @@
                                 echo "</tr>";
                                 }
                                 echo "<tbody>" ;
-                                mysqli_close($conn);
+                                mysqli_close($conn); 
+                                echo '<script type="text/javascript">',
+                                'hideme();',
+                                '</script>'
+                                ;  
+
                                 ?>
 </table>
 
-<table class="table table-striped" id="bustable1"
-                        style=" margin-top:40px;right:40px; background: rgba(253, 253, 253, 0.384); color: white; visiblity:hidden;">
+                                
+
+<table class="table table-striped" id="bustable2"
+                        style=" margin-top:-213px;right:40px;  background: rgba(253, 253, 253, 0.384); color: white; visiblity:hidden;">
                                 <!-- Route2 -->
                                 <?php
                         $dbhost = "localhost";
@@ -130,7 +148,12 @@
                                 echo "</tr>";
                                 }
                                 echo "<tbody>" ;
+                                
                                 mysqli_close($conn);
+                                 echo '<script type="text/javascript">',
+                                'hideme();',
+                                '</script>'
+                                ; 
                                 ?>
                                 </table>
             <div class="wrapper">
@@ -177,8 +200,7 @@
     <script src="js/userDetails.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/drag_drop.js"></script>
-    <!-- php -->
-    <?php include 'php/connect.php';?>
+    =
     <script>
         // Your web app's Firebase configuration
         const firebaseConfig = {

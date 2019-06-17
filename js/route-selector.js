@@ -2,13 +2,9 @@ var busroute;
 document.mainForm.onclick = function () {
     var routes = document.mainForm.route.value;
     if (routes == 'route1') {
-<<<<<<< HEAD
 
         document.getElementById("bustable2").style.visibility="hidden";
         document.getElementById("bustable1").style.visibility="visible";
-=======
-        document.getElementById("bustable").style.visibility="visible";
->>>>>>> 52b1718787f9b47e4e54925f687231fa939f3df5
         if (busroute != null) {
             busroute.setMap(null);
         }
