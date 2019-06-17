@@ -73,7 +73,6 @@
                     </form>
                 </div>
             </div>
-<<<<<<< HEAD:map.php
             <!-- ROUTE 1 -->
             <table class="table table-striped" id="bustable1"
                         style=" margin-top:40px;right:40px; background: rgba(253, 253, 253, 0.384); color: white;visiblity:hidden;">
@@ -138,50 +137,6 @@
                 <div class="wrapper-content">
                     <button id="myBtn" class="btn btn-warning">Drag and drop</button>
                 </div>
-=======
-            <table class="table table-striped" id="bustable"
-                style=" margin-top:40px;right:40px; background: rgba(253, 253, 253, 0.384); color: white; visibility: hidden">
-                <thead>
-
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Bus No</th>
-                        <th scope="col">Passengers</th>
-                        <th scope="col">Handle</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-
-                </tbody>
-              </table>
-
-              <div class="wrapper" style="top: 30px">
-                  <div class="d-flex justify-content-around">
-                        <button id="myBtndnd" class="btn btn-warning">Drag and drop</button>
-                        <button id="myBtnalarm" class="btn btn-danger">Alarms</button>
-                        <button id="myBtnreport" class="btn btn-primary">Report</button>
-
-                  </div>
-                    
->>>>>>> 52b1718787f9b47e4e54925f687231fa939f3df5:map.html
                 <!--  start modal    -->
 
                 <div id="myModal" class="modal">
