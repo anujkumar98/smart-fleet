@@ -76,38 +76,66 @@
                     </form>
                 </div>
             </div>
-            <table class="table table-striped" id="bustable"
-                style=" margin-top:40px;right:40px; background: rgba(253, 253, 253, 0.384); color: white;">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Bus No</th>
-                        <th scope="col">Passengers</th>
-                        <th scope="col">Handle</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- ROUTE 1 -->
+            <table class="table table-striped" id="bustable1"
+                        style=" margin-top:40px;right:40px; background: rgba(253, 253, 253, 0.384); color: white;visiblity:hidden;">
+            <?php
+                        $dbhost = "localhost";
+                        $dbuser = "root";
+                        $dbpass = "";
+                        $db = "bus_details";
+                        $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
+                        $query='select * from bus_info where route=1';
+                        $result=$conn->query($query);
 
+                        echo "<thead>";
+                        echo "<tr>
+                                <th>Bus Id</th>
+                                <th>Bus No</th>
+                                </tr>";
+                                echo "</thead>";
+                             echo "<tbody>" ;
+                                while($row = mysqli_fetch_array($result))
+                                {
+                                echo "<tr>";
+                                echo "<td>" . $row['Bus_id'] . "</td>";
+                                echo "<td>" . $row['Bus_no'] . "</td>";
+                                echo "</tr>";
+                                }
+                                echo "<tbody>" ;
+                                mysqli_close($conn);
+                                ?>
+</table>
+
+<table class="table table-striped" id="bustable1"
+                        style=" margin-top:40px;right:40px; background: rgba(253, 253, 253, 0.384); color: white; visiblity:hidden;">
+                                <!-- Route2 -->
+                                <?php
+                        $dbhost = "localhost";
+                        $dbuser = "root";
+                        $dbpass = "";
+                        $db = "bus_details";
+                        $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
+                        $query='select * from bus_info where route=2';
+                        $result=$conn->query($query);
+                        echo "<thead>";
+                        echo "<tr>
+                                <th>Bus Id</th>
+                                <th>Bus No</th>
+                                </tr>";
+                                echo "</thead>";
+                             echo "<tbody>" ;
+                                while($row = mysqli_fetch_array($result))
+                                {
+                                echo "<tr>";
+                                echo "<td>" . $row['Bus_id'] . "</td>";
+                                echo "<td>" . $row['Bus_no'] . "</td>";
+                                echo "</tr>";
+                                }
+                                echo "<tbody>" ;
+                                mysqli_close($conn);
+                                ?>
+                                </table>
             <div class="wrapper">
                 <div class="wrapper-content">
                     <button id="myBtn" class="btn btn-warning">Drag and drop</button>

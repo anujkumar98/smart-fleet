@@ -2,7 +2,9 @@ var busroute;
 document.mainForm.onclick = function () {
     var routes = document.mainForm.route.value;
     if (routes == 'route1') {
-        //document.getElementById("bustable").style.visibility="visible";
+
+        document.getElementById("bustable2").style.visibility="hidden";
+        document.getElementById("bustable1").style.visibility="visible";
         if (busroute != null) {
             busroute.setMap(null);
         }
@@ -32,9 +34,12 @@ document.mainForm.onclick = function () {
             strokeOpacity: 1.0,
             strokeWeight: 2
         });
+
     }
     else if (routes == 'route2') {
-        document.getElementById("bustable").style.visibility="visible";
+
+        document.getElementById("bustable1").style.visibility="hidden";
+        document.getElementById("bustable2").style.visibility="visible";
         if (busroute != null) {
             busroute.setMap(null);
         }
@@ -50,7 +55,7 @@ document.mainForm.onclick = function () {
         });
     }
     else if (routes == 'route3') {
-        document.getElementById("bustable").style.visibility="visible";
+        //document.getElementById("bustable").style.visibility="visible";
         if (busroute != null) {
             busroute.setMap(null);
         }
