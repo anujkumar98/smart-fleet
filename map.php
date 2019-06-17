@@ -7,29 +7,26 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Map</title>
 </head>
 
 
-<body
-    style="overflow:hidden; height: 9700px; background-image: radial-gradient( rgb(255, 6, 6), rgb(45, 45, 83)); background-repeat: no-repeat; background-size: cover;">
+<body style="overflow:hidden; height: 9700px; background-image: radial-gradient( rgb(255, 6, 6), rgb(45, 45, 83)); background-repeat: no-repeat; background-size: cover;">
     <div class="col-12 d-flex justify-content-between">
         <!-- <div class="col-4 display-6 text-white" style="padding: 20px">Welcome: </div> -->
         <div class="d-flex">
             <div class="display-5 text-white" style="padding: 20px">Welcome: </div>
-            <div class="display-5 text-white" style="padding: 20px" id="userName"></div>
+            <div class="display-5 text-white" style=" padding: 20px" id="userName"></div>
         </div>
-        <div class="display-4"
-            style="font-family: Verdana, Geneva, Tahoma, sans-serif;color: rgb(27, 24, 168); text-shadow: 2px 2px white;">
-            Smart Vehicle Management</div>
-        <button class="btn-warning" style="padding: 10px; margin-top: 10px;margin-right: -5px;" onclick="logout();">Log
-            Out</button>
+        <div class="display-4" style="position: absolute; left: 630px; font-family: Verdana, Geneva, Tahoma, sans-serif;color: rgb(27, 24, 168); text-shadow: 2px 2px white;">Smart Vehicle Management</div>
+        <button class="btn-warning" style="padding: 10px; margin-top: 10px;margin-right: -5px;" onclick="logout();">Log Out</button>
     </div>
     <div class="row d-flex justify-content-start">
         <div class="col-1" style="margin-top:80px;">
-            <div class="sidenav text-white" style="background: rgba(31, 161, 184, 0); border-radius: 10px">
+            <div class="sidenav text-white" style="background: rgba(250, 245, 245, 0.281); border-radius: 30px;">
                 <!-- <a class="h3 text-sidenav-le">Legend<br></a> -->
-                <a><img src="assets/bus_bubble_green.png" alt=""><br>
+                <a><img src="assets/bus_bubble_green.png">
                     <div class="text-sidenav d-flex justify-content-center"><br>Running<br></div>
                 </a>
                 <a><img src="assets/bus_bubble_red.png">
@@ -43,7 +40,7 @@
                 </a>
             </div>
         </div>
-        <div class="col-8" style="height: 100%">
+        <div class="col-8">
             <div id="map" class="right-element" style="height: 810px"></div>
         </div>
 
@@ -76,6 +73,7 @@
                     </form>
                 </div>
             </div>
+<<<<<<< HEAD:map.php
             <!-- ROUTE 1 -->
             <table class="table table-striped" id="bustable1"
                         style=" margin-top:40px;right:40px; background: rgba(253, 253, 253, 0.384); color: white;visiblity:hidden;">
@@ -140,6 +138,50 @@
                 <div class="wrapper-content">
                     <button id="myBtn" class="btn btn-warning">Drag and drop</button>
                 </div>
+=======
+            <table class="table table-striped" id="bustable"
+                style=" margin-top:40px;right:40px; background: rgba(253, 253, 253, 0.384); color: white; visibility: hidden">
+                <thead>
+
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Bus No</th>
+                        <th scope="col">Passengers</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+
+                </tbody>
+              </table>
+
+              <div class="wrapper" style="top: 30px">
+                  <div class="d-flex justify-content-around">
+                        <button id="myBtndnd" class="btn btn-warning">Drag and drop</button>
+                        <button id="myBtnalarm" class="btn btn-danger">Alarms</button>
+                        <button id="myBtnreport" class="btn btn-primary">Report</button>
+
+                  </div>
+                    
+>>>>>>> 52b1718787f9b47e4e54925f687231fa939f3df5:map.html
                 <!--  start modal    -->
 
                 <div id="myModal" class="modal">
@@ -170,6 +212,7 @@
 
             </div>
         </div>
+        </div>
     </div>
     </div>>
     <!-- Firebase -->
@@ -179,6 +222,8 @@
     <script src="js/userDetails.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/drag_drop.js"></script>
+    <!-- php -->
+    <?php include 'php/connect.php';?>
     <script>
         // Your web app's Firebase configuration
         const firebaseConfig = {

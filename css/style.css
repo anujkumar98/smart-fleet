@@ -8,16 +8,16 @@ body{
   }
   .sidenav{
       margin-left: 20px;
+      height: 680px;
   }
   .sidenav img{
       height: 120px;
       width: 120px;
       margin-left: -2px;
-      padding-bottom: -20px;
       margin-top: 30px;
   }
 .text-sidenav{
-    margin-top: -30px;
+    margin-top: -50px;
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
@@ -38,20 +38,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     padding: 10px;
     background: blue;
 }
-
-#crane{
-    transition: transform .2s;
-}
-#crane:hover{
-    transform: scale(1.08);
-}
-#bus{
-    transition: transform .2s;
-}
-#bus:hover{
-    transform: scale(1.08);
-}
-
 .option-input {
     -webkit-appearance: none;
     -moz-appearance: none;
