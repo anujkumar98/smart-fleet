@@ -84,7 +84,7 @@
 
             <!-- ROUTE 1 -->
             <table class="table table-striped" id="bustable1"
-                        style=" margin-top:40px;right:40px; background: rgba(253, 253, 253, 0.384); color: white; visiblity:hidden;">
+                        style=" margin-top:40px;right:40px; background: rgba(253, 253, 253, 0.384); color: white;">
 
 
             <?php
@@ -123,7 +123,7 @@
                                 
 
 <table class="table table-striped" id="bustable2"
-                        style=" margin-top:-213px;right:40px;  background: rgba(253, 253, 253, 0.384); color: white; visiblity:hidden;">
+                        style=" margin-top:-213px;right:40px;  background: rgba(253, 253, 253, 0.384); color: white;">
                                 <!-- Route2 -->
                                 <?php
                         $dbhost = "localhost";
