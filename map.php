@@ -101,6 +101,7 @@
                         echo "<tr>
                                 <th>Bus Id</th>
                                 <th>Bus No</th>
+                                <th>MyTime</th>
                                 </tr>";
                                 echo "</thead>";
                              echo "<tbody>" ;
@@ -192,6 +193,7 @@
                                 ;
                                 ?>
                                 </table>
+
             <div class="wrapper">
                 <div class="wrapper-content">
                     <button id="myBtn" class="btn btn-warning">Drag and drop</button>
