@@ -12,7 +12,7 @@
 </head>
 
 
-<body style="overflow:hidden; height: 9700px; background-image: radial-gradient( rgb(255, 6, 6), rgb(45, 45, 83)); background-repeat: no-repeat; background-size: cover;">
+<body style="overflow:hidden; height: 9700px; background-image: radial-gradient( rgb(115, 205, 221), rgb(182, 182, 253)); background-repeat: no-repeat; background-size: cover;">
     <div class="col-12 d-flex justify-content-between">
         <!-- <div class="col-4 display-6 text-white" style="padding: 20px">Welcome: </div> -->
         <div class="d-flex">
@@ -96,19 +96,26 @@
                         $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
                         $query='select * from bus_info where route=1';
                         $result=$conn->query($query);
-
+                        date_default_timezone_set('Asia/Kolkata');
                         echo "<thead>";
                         echo "<tr>
                                 <th>Bus Id</th>
                                 <th>Bus No</th>
+                                <th>Timestamp</th>
+                                <th>System Time</th>
                                 </tr>";
                                 echo "</thead>";
                              echo "<tbody>" ;
                                 while($row = mysqli_fetch_array($result))
                                 {
+                                    $dum=$row['Bus_no'];
+                                $result2=$conn->query("SELECT TIMESTAMP FROM bus where EQPT_ID='$dum' ORDER BY TIMESTAMP DESC LIMIT 1");
+                                $row2=mysqli_fetch_array($result2);
                                 echo "<tr>";
                                 echo "<td>" . $row['Bus_id'] . "</td>";
                                 echo "<td>" . $row['Bus_no'] . "</td>";
+                                echo "<td>" . $row2['TIMESTAMP']."</td>";
+                                echo "<td>" . date("H:i")."</td>";
                                 echo "</tr>";
                                 }
                                 echo "<tbody>" ;
@@ -176,6 +183,7 @@
                                 </tr>";
                                 echo "</thead>";
                              echo "<tbody>" ;
+
                                 while($row = mysqli_fetch_array($result))
                                 {
                                 echo "<tr>";
