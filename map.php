@@ -197,10 +197,15 @@
     <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
+
+
     <script src="js/userDetails.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/drag_drop.js"></script>
-    =
+    <script src="js/map.js"></script>
+    <script src="js/route-selector.js"></script>
+
+
     <script>
         // Your web app's Firebase configuration
         const firebaseConfig = {
@@ -225,8 +230,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbaOxnzOfhcCTvgv_KWYvJMhr-NP7XnSk&callback=initMap"
         async defer></script>
 
-    <script src="js/map.js"></script>
-    <script src="js/route-selector.js"></script>
 </body>
 
 </html>
