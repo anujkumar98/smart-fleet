@@ -12,7 +12,7 @@
 </head>
 
 
-<body style="overflow:hidden; height: 9700px; background-image: radial-gradient( rgb(115, 205, 221), rgb(182, 182, 253)); background-repeat: no-repeat; background-size: cover;">
+<body style="overflow:hidden; height: 9700px; background-image: radial-gradient( rgb(255, 6, 6), rgb(45, 45, 83)); background-repeat: no-repeat; background-size: cover;">
     <div class="col-12 d-flex justify-content-between">
         <!-- <div class="col-4 display-6 text-white" style="padding: 20px">Welcome: </div> -->
         <div class="d-flex">
@@ -23,19 +23,22 @@
         <button class="btn-warning" style="padding: 10px; margin-top: 10px;margin-right: -5px;" onclick="logout();">Log Out</button>
     </div>
     <div class="row d-flex justify-content-start">
-        <div class="col-1" style="margin-top:80px;">
-            <div class="sidenav text-white" style="background: rgba(250, 245, 245, 0.281); border-radius: 30px;">
+        <div class="col-1" style="margin-top:30px;">
+            <div class="sidenav text-white" style="background: rgba(250, 245, 245, 0.281); height: 820px; border-radius: 80px;">
                 <!-- <a class="h3 text-sidenav-le">Legend<br></a> -->
                 <a><img src="assets/bus_bubble_green.png">
-                    <div class="text-sidenav d-flex justify-content-center"><br>Running<br></div>
+                    <div class="text-sidenav d-flex justify-content-center"><br>Speed 0-30<br></div>
                 </a>
                 <a><img src="assets/bus_bubble_red.png">
-                    <div class="text-sidenav d-flex justify-content-center"><br>Overspeeding<br></div>
-                </a>
-                <a><img src="assets/bus_red.png">
-                    <div class="text-sidenav d-flex justify-content-center"><br>Stopped<br></div>
+                    <div class="text-sidenav d-flex justify-content-center"><br>Speed &gt30<br></div>
                 </a>
                 <a><img src="assets/bus_blue.png">
+                    <div class="text-sidenav d-flex justify-content-center"><br>&lt2 Satellites<br></div>
+                </a>
+                <a><img src="assets/bus_yellow.png">
+                    <div class="text-sidenav d-flex justify-content-center"><br>Stopped<br></div>
+                </a>
+                <a><img src="assets/bus_red.png">
                     <div class="text-sidenav d-flex justify-content-center"><br>Maintenance<br></div>
                 </a>
             </div>
@@ -48,7 +51,7 @@
             <div class="card"
                 style=" margin-top:30px;margin-right: 10px; background: rgba(245, 245, 248, 0.404); text-align: center; color: white;">
                 <div class="card-body">
-                    <h5 class="card-title">Routes</h5>
+                    <p class="h4">Routes</p>
                     <form id="mainForm" name="mainForm">
                         <div class="row">
                             <div class="col-4">
@@ -99,14 +102,10 @@
                         date_default_timezone_set('Asia/Kolkata');
                         echo "<thead>";
                         echo "<tr>
-                                <th>Bus Id</th>
-                                <th>Bus No</th>
-<<<<<<< HEAD
-                                <th>MyTime</th>
-=======
-                                <th>Timestamp</th>
-                                <th>System Time</th>
->>>>>>> 5c9921e491b7646345db1fca1f8740aab08a41f3
+                                <th><p class='h5'>Bus Id</p></th>
+                                <th><p class='h5'>Bus No</p></th>
+                                <th><p class='h5'>Timestamp</p></th>
+                                <th><p class='h5'>Systime</p></th>
                                 </tr>";
                                 echo "</thead>";
                              echo "<tbody>" ;
@@ -147,16 +146,23 @@
                         $result=$conn->query($query);
                         echo "<thead>";
                         echo "<tr>
-                                <th>Bus Id</th>
-                                <th>Bus No</th>
+                        <th><p class='h5'>Bus Id</p></th>
+                        <th><p class='h5'>Bus No</p></th>
+                        <th><p class='h5'>Timestamp</p></th>
+                        <th><p class='h5'>Systime</p></th>
                                 </tr>";
                                 echo "</thead>";
                              echo "<tbody>" ;
                                 while($row = mysqli_fetch_array($result))
                                 {
-                                echo "<tr>";
-                                echo "<td>" . $row['Bus_id'] . "</td>";
-                                echo "<td>" . $row['Bus_no'] . "</td>";
+                                    $dum=$row['Bus_no'];
+                                    $result2=$conn->query("SELECT TIMESTAMP FROM bus where EQPT_ID='$dum' ORDER BY TIMESTAMP DESC LIMIT 1");
+                                    $row2=mysqli_fetch_array($result2);
+                                    echo "<tr>";
+                                    echo "<td>" . $row['Bus_id'] . "</td>";
+                                    echo "<td>" . $row['Bus_no'] . "</td>";
+                                    echo "<td>" . $row2['TIMESTAMP']."</td>";
+                                    echo "<td>" . date("H:i")."</td>";
                                 echo "</tr>";
                                 }
                                 echo "<tbody>" ;
@@ -182,17 +188,24 @@
                         $result=$conn->query($query);
                         echo "<thead>";
                         echo "<tr>
-                                <th>Bus Id</th>
-                                <th>Bus No</th>
+                        <th><p class='h5'>Bus Id</p></th>
+                        <th><p class='h5'>Bus No</p></th>
+                        <th><p class='h5'>Timestamp</p></th>
+                        <th><p class='h5'>Systime</p></th>
                                 </tr>";
                                 echo "</thead>";
                              echo "<tbody>" ;
-
+                             
                                 while($row = mysqli_fetch_array($result))
                                 {
-                                echo "<tr>";
-                                echo "<td>" . $row['Bus_id'] . "</td>";
-                                echo "<td>" . $row['Bus_no'] . "</td>";
+                                    $dum=$row['Bus_no'];
+                                    $result2=$conn->query("SELECT TIMESTAMP FROM bus where EQPT_ID='$dum' ORDER BY TIMESTAMP DESC LIMIT 1");
+                                    $row2=mysqli_fetch_array($result2);
+                                    echo "<tr>";
+                                    echo "<td>" . $row['Bus_id'] . "</td>";
+                                    echo "<td>" . $row['Bus_no'] . "</td>";
+                                    echo "<td>" . $row2['TIMESTAMP']."</td>";
+                                    echo "<td>" . date("H:i")."</td>";
                                 echo "</tr>";
                                 }
                                 echo "<tbody>" ;
@@ -223,16 +236,16 @@
                                     <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" style=" border: 1px solid black; height:100%;">
                                         <img src="assets/bus_blue_60x40.png" draggable="true" ondragstart="drag(event)" id="drag1">
                                     </div>
-                                    </div>
+                                </div>
                                 <div class="col-6" >
                                         Maintenance
                                         <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" style=" border: 1px solid black; height:100%;"></div>
-                            </div>
-                            <div class="col-12 d-flex justify-content-between">
+                                </div>
+                                <div class="col-12 d-flex justify-content-between">
                                     <button id="btn_close" class="btn btn-warning" style="width:30%; margin-left:35%;margin-top: 5%;">close</button>
+                                </div>
                             </div>
-                    </div>
-                </div>
+                        </div>
                     </div>
                 </div>
                 <!--  End modal    -->
