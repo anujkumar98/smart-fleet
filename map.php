@@ -45,10 +45,42 @@
         </div>
 
         <div class="col-4">
+        <div class="wrapper">
+                <div class="wrapper-content">
+                    <button id="myBtn" class="btn btn-warning">Drag and drop</button>
+                </div>
+                <!--  start modal    -->
+
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal_header">
+                            BUSES:
+                        </div>
+                        <div class="modal_body">
+                            <div class="row">
+                                <div class="col-6" >
+                                    RUNNING
+                                    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" style=" border: 1px solid black; height:100%;">
+                                        <img src="assets/bus_blue_60x40.png" draggable="true" ondragstart="drag(event)" id="drag1">
+                                    </div>
+                                </div>
+                                <div class="col-6" >
+                                    MAINTENANCE
+                                    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" style=" border: 1px solid black; height:100%;"></div>
+                                </div>
+                            <div class="col-12 d-flex justify-content-between">
+                                <button id="btn_close" class="btn btn-warning" style="width:30%; margin-left:35%;margin-top: 5%;">close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  End modal    -->
+        </div>
             <div class="card"
                 style=" margin-top:30px;margin-right: 10px; background: rgba(245, 245, 248, 0.404); text-align: center; color: white;">
                 <div class="card-body">
-                    <h5 class="card-title">Routes</h5>
+                    <h5 class="card-title">ROUTES</h5>
                     <form id="mainForm" name="mainForm">
                         <div class="row">
                             <div class="col-4">
@@ -126,11 +158,8 @@
                                 ;
 
                                 ?>
-</table>
-
-
-
-<table class="table table-striped" id="bustable2"
+            </table>
+            <table class="table table-striped" id="bustable2"
                         style=" margin-top:-213px;right:40px;  background: rgba(253, 253, 253, 0.384); color: white;">
                                 <!-- Route2 -->
                                 <?php
@@ -164,8 +193,8 @@
                                 ;
                                 ?>
                                 </table>
-<!-- Route3 -->
-                                <table class="table table-striped" id="bustable3"
+                <!-- Route3 -->
+                <table class="table table-striped" id="bustable3"
                         style=" margin-top:-262px;right:40px;  background: rgba(253, 253, 253, 0.384); color: white;">
 
                                 <?php
@@ -199,40 +228,8 @@
                                 '</script>'
                                 ;
                                 ?>
-                                </table>
-            <div class="wrapper">
-                <div class="wrapper-content">
-                    <button id="myBtn" class="btn btn-warning">Drag and drop</button>
-                </div>
-                <!--  start modal    -->
+</table>
 
-                <div id="myModal" class="modal">
-                    <div class="modal-content">
-                        <div class="modal_header">
-                            Buses:
-                        </div>
-                        <div class="modal_body">
-                            <div class="row">
-                                <div class="col-6" >
-                                    Running
-                                    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" style=" border: 1px solid black; height:100%;">
-                                        <img src="assets/bus_blue_60x40.png" draggable="true" ondragstart="drag(event)" id="drag1">
-                                    </div>
-                                    </div>
-                                <div class="col-6" >
-                                        Maintenance
-                                        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" style=" border: 1px solid black; height:100%;"></div>
-                            </div>
-                            <div class="col-12 d-flex justify-content-between">
-                                    <button id="btn_close" class="btn btn-warning" style="width:30%; margin-left:35%;margin-top: 5%;">close</button>
-                            </div>
-                    </div>
-                </div>
-                    </div>
-                </div>
-                <!--  End modal    -->
-
-            </div>
         </div>
         </div>
     </div>
