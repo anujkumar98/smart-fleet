@@ -40,11 +40,11 @@
                 </a>
             </div>
         </div>
-        <div class="col-8">
+        <div class="col-7">
             <div id="map" class="right-element" style="height: 810px"></div>
         </div>
 
-        <div class="col-3">
+        <div class="col-4">
             <div class="card"
                 style=" margin-top:30px;margin-right: 10px; background: rgba(245, 245, 248, 0.404); text-align: center; color: white;">
                 <div class="card-body">
@@ -78,6 +78,7 @@
                                     function hideme(){
                                          document.getElementById("bustable1").style.visibility="hidden";
                                          document.getElementById("bustable2").style.visibility="hidden";
+                                         document.getElementById("bustable3").style.visibility="hidden";
                                     }
                                 </script>
 
@@ -111,16 +112,16 @@
                                 echo "</tr>";
                                 }
                                 echo "<tbody>" ;
-                                mysqli_close($conn); 
+                                mysqli_close($conn);
                                 echo '<script type="text/javascript">',
                                 'hideme();',
                                 '</script>'
-                                ;  
+                                ;
 
                                 ?>
 </table>
 
-                                
+
 
 <table class="table table-striped" id="bustable2"
                         style=" margin-top:-213px;right:40px;  background: rgba(253, 253, 253, 0.384); color: white;">
@@ -148,12 +149,47 @@
                                 echo "</tr>";
                                 }
                                 echo "<tbody>" ;
-                                
+
                                 mysqli_close($conn);
                                  echo '<script type="text/javascript">',
                                 'hideme();',
                                 '</script>'
-                                ; 
+                                ;
+                                ?>
+                                </table>
+<!-- Route3 -->
+                                <table class="table table-striped" id="bustable3"
+                        style=" margin-top:-262px;right:40px;  background: rgba(253, 253, 253, 0.384); color: white;">
+
+                                <?php
+                        $dbhost = "localhost";
+                        $dbuser = "root";
+                        $dbpass = "";
+                        $db = "bus_details";
+                        $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
+                        $query='select * from bus_info where route=3';
+                        $result=$conn->query($query);
+                        echo "<thead>";
+                        echo "<tr>
+                                <th>Bus Id</th>
+                                <th>Bus No</th>
+                                </tr>";
+                                echo "</thead>";
+                             echo "<tbody>" ;
+                                while($row = mysqli_fetch_array($result))
+                                {
+                                echo "<tr>";
+                                echo "<td>" . $row['Bus_id'] . "</td>";
+                                echo "<td>" . $row['Bus_no'] . "</td>";
+                                echo "</tr>";
+                                }
+                                echo "<tbody>" ;
+
+                                mysqli_close($conn);
+                                 echo '<script type="text/javascript">',
+                                'hideme();',
+                                '</script>'
+                                ;
                                 ?>
                                 </table>
             <div class="wrapper">
