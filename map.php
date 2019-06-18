@@ -83,11 +83,7 @@
             <div class="card"
                 style=" margin-top:30px;margin-right: 10px; background: rgba(245, 245, 248, 0.404); text-align: center; color: white;">
                 <div class="card-body">
-<<<<<<< HEAD
                     <h5 class="card-title">ROUTES</h5>
-=======
-                    <p class="h4">Routes</p>
->>>>>>> c54482f2087623c82d2ae8002369466f53b77392
                     <form id="mainForm" name="mainForm">
                         <div class="row">
                             <div class="col-4">
@@ -167,7 +163,7 @@
                                 ?>
             </table>
             <table class="table table-striped" id="bustable2"
-                        style=" margin-top:-213px;right:40px;  background: rgba(253, 253, 253, 0.384); color: white;">
+                        style=" margin-top:-220px;right:40px;  background: rgba(253, 253, 253, 0.384); color: white;">
                                 <!-- Route2 -->
                                 <?php
                         $dbhost = "localhost";
@@ -189,13 +185,45 @@
                                 while($row = mysqli_fetch_array($result))
                                 {
                                     $dum=$row['Bus_no'];
+                                    $h=(int)date("H");
+                                    $m=(int)date("i");
+
                                     $result2=$conn->query("SELECT TIMESTAMP FROM bus where EQPT_ID='$dum' ORDER BY TIMESTAMP DESC LIMIT 1");
                                     $row2=mysqli_fetch_array($result2);
                                     echo "<tr>";
                                     echo "<td>" . $row['Bus_id'] . "</td>";
                                     echo "<td>" . $row['Bus_no'] . "</td>";
+                                    $timeH=(int)substr($row2['TIMESTAMP'],0,2);
+                                    $timeM=(int)substr($row2['TIMESTAMP'],3,2);
+                                    if($h - $timeH > 1){
+                                       //Time gtreater than half hour
+                                       echo "<td>Not Active g30</td>";
+                                    }
+                                    else{
+                                        if($h-$timeH==1){
+                                            $timeM=60-$timeM;
+                                            $timeM=$timeM+$m;
+                                            if($timeM > 30){
+                                                echo "<td>Not Active g31</td>";
+                                            }
+                                            else{
+                                                echo "<td>Active g31</td>";
+                                            }
+                                        }
+                                        elseif($h-$timeH==0){
+                                                if($m - $timeM > 30){
+                                                    echo "<td>Not Active g32</td>";
+                                                }else{
+                                                    echo "<td>Active g32</td>";
+                                                }
+                                        }
+                                        else{
+                                            echo "<td>Check Logic...</td>";
+                                        }
+
+                                    }
                                     echo "<td>" . $row2['TIMESTAMP']."</td>";
-                                    echo "<td>" . date("H:i")."</td>";
+
                                 echo "</tr>";
                                 }
                                 echo "<tbody>" ;
@@ -209,7 +237,7 @@
                                 </table>
                 <!-- Route3 -->
                 <table class="table table-striped" id="bustable3"
-                        style=" margin-top:-262px;right:40px;  background: rgba(253, 253, 253, 0.384); color: white;">
+                        style=" margin-top:-286px;right:40px;  background: rgba(253, 253, 253, 0.384); color: white;">
 
                                 <?php
                         $dbhost = "localhost";
@@ -228,7 +256,7 @@
                                 </tr>";
                                 echo "</thead>";
                              echo "<tbody>" ;
-                             
+
                                 while($row = mysqli_fetch_array($result))
                                 {
                                     $dum=$row['Bus_no'];
@@ -249,43 +277,7 @@
                                 '</script>'
                                 ;
                                 ?>
-<<<<<<< HEAD
 </table>
-=======
-                                </table>
-
-            <div class="wrapper">
-                <div class="wrapper-content">
-                    <button id="myBtn" class="btn btn-warning">Drag and drop</button>
-                </div>
-                <!--  start modal    -->
-
-                <div id="myModal" class="modal">
-                    <div class="modal-content">
-                        <div class="modal_header">
-                            Buses:
-                        </div>
-                        <div class="modal_body">
-                            <div class="row">
-                                <div class="col-6" >
-                                    Running
-                                    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" style=" border: 1px solid black; height:100%;">
-                                        <img src="assets/bus_blue_60x40.png" draggable="true" ondragstart="drag(event)" id="drag1">
-                                    </div>
-                                </div>
-                                <div class="col-6" >
-                                        Maintenance
-                                        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" style=" border: 1px solid black; height:100%;"></div>
-                                </div>
-                                <div class="col-12 d-flex justify-content-between">
-                                    <button id="btn_close" class="btn btn-warning" style="width:30%; margin-left:35%;margin-top: 5%;">close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--  End modal    -->
->>>>>>> c54482f2087623c82d2ae8002369466f53b77392
 
         </div>
         </div>
