@@ -34,7 +34,7 @@
                     <div class="text-sidenav d-flex justify-content-center"><br>Speed &gt30<br></div>
                 </a>
                 <a><img src="assets/bus_blue.png">
-                    <div class="text-sidenav d-flex justify-content-center"><br>&lt2 Satellites<br></div>
+                    <div class="text-sidenav d-flex justify-content-center"><br>&lt7 Satellites<br></div>
                 </a>
                 <a><img src="assets/bus_yellow.png">
                     <div class="text-sidenav d-flex justify-content-center"><br>Stopped<br></div>
@@ -297,7 +297,7 @@
                         $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
                         $query='select * from bus_info where route=2';
                         $result=$conn->query($query);
-                        echo "<thead>";
+                        echo "<thead class=\"thead-dark\">";
                         echo "<tr>
                         <th><p class='h5'>Bus Id</p></th>
                         <th><p class='h5'>Bus No</p></th>
@@ -316,35 +316,6 @@
                                     echo "<tr>";
                                     echo "<td>" . $row['Bus_id'] . "</td>";
                                     echo "<td>" . $row['Bus_no'] . "</td>";
-                                    // $timeH=(int)substr($row2['TIMESTAMP'],0,2);
-                                    // $timeM=(int)substr($row2['TIMESTAMP'],3,2);
-                                    // if($h - $timeH > 1){
-                                    //    //Time gtreater than half hour
-                                    //    echo "<td>Not Active g30</td>";
-                                    // }
-                                    // else{
-                                    //     if($h-$timeH==1){
-                                    //         $timeM=60-$timeM;
-                                    //         $timeM=$timeM+$m;
-                                    //         if($timeM > 30){
-                                    //             echo "<td>Not Active g31</td>";
-                                    //         }
-                                    //         else{
-                                    //             echo "<td>Active g31</td>";
-                                    //         }
-                                    //     }
-                                    //     elseif($h-$timeH==0){
-                                    //             if($m - $timeM > 30){
-                                    //                 echo "<td>Not Active g32</td>";
-                                    //             }else{
-                                    //                 echo "<td>Active g32</td>";
-                                    //             }
-                                    //     }
-                                    //     else{
-                                    //         echo "<td>Check Logic...</td>";
-                                    //     }
-
-                                    // }
                                     echo "<td>" . $row2['TIMESTAMP']."</td>";
 
                                 echo "</tr>";
@@ -370,7 +341,7 @@
                         $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
                         $query='select * from bus_info where route=3';
                         $result=$conn->query($query);
-                        echo "<thead>";
+                        echo "<thead class=\"thead-dark\">";
                         echo "<tr>
                         <th><p class='h5'>Bus Id</p></th>
                         <th><p class='h5'>Bus No</p></th>
