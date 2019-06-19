@@ -48,9 +48,12 @@
         </div>
 
         <div class="col-4">
-        <div class="wrapper">
+            <div class="row">
+
+                <div class="col-4">
+                <div class="wrapper">
                 <div class="wrapper-content">
-                    <button id="myBtn" class="btn btn-warning">Drag and drop</button>
+                    <button id="myBtn" class="btn btn-warning">Maintenance</button>
                 </div>
                 <!--  start modal    -->
 
@@ -72,14 +75,136 @@
                                     <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)" style=" border: 1px solid black; height:100%;"></div>
                                 </div>
                             <div class="col-12 d-flex justify-content-between">
-                                <button id="btn_close" class="btn btn-warning" style="width:30%; margin-left:35%;margin-top: 5%;">close</button>
+                                <button id="btn_close" class="btn btn-warning" style="width:20%; margin-left:40%;margin-top: 5%;">Close</button>
                             </div>
                         </div>
                         </div>
                     </div>
                 </div>
+                </div>
                 <!--  End modal    -->
-        </div>
+                </div>
+                <div class="col-4">
+                <div class="wrapper">
+                <div class="wrapper-content">
+                    <button id="myBtn1" class="btn btn-warning">Alarm</button>
+                </div>
+                <!--  start modal    -->
+                <div id="myModal1" class="modal">
+                    <div class="modal-content">
+                        <div class="modal_header h4">
+                            ALARM
+                        </div>
+                        <div class="modal_body">
+                        <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Bus ID</th>
+      <th scope="col">Bus No</th>
+      <th scope="col">Status</th>
+      <th scope="col">Last Gps Reading</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php
+                        $dbhost = "localhost";
+                        $dbuser = "root";
+                        $dbpass = "";
+                        $db = "bus_details";
+                        $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
+                        $query='select * from bus_info';
+                        $result=$conn->query($query);
+                        date_default_timezone_set('Asia/Kolkata');
+                                while($row = mysqli_fetch_array($result))
+                                {
+                                    $dum=$row['Bus_no'];
+                                    $h=(int)date("H");//system hour
+                                    $m=(int)date("i");//system min
+                                    $result2=$conn->query("SELECT TIMESTAMP FROM bus where EQPT_ID='$dum' ORDER BY TIMESTAMP DESC LIMIT 1");
+                                    $row2=mysqli_fetch_array($result2);
+                                    echo "<tr>";
+                                    echo "<td>" . $row['Bus_id'] . "</td>";
+                                    echo "<td>" . $row['Bus_no'] . "</td>";
+
+                                    $timeH=(int)substr($row2['TIMESTAMP'],11,2);//hour gps
+                                    $timeM=(int)substr($row2['TIMESTAMP'],13,2);//min gps
+
+                                    if($h - $timeH > 1){
+                                       //Time gtreater than half hour
+                                       echo "<td style=\"background:red;\">Not Active</td>";
+                                    }
+                                    elseif($h-$timeH==1){
+                                            $timeM=60-$timeM;
+                                            $timeM=$timeM+$m;
+                                            if($timeM > 30){
+                                                echo "<td style=\"background:red;\">Not Active</td>";
+                                            }
+                                            else{
+                                                echo "<td style=\"background:#32CD32;\">Active</td>";
+                                            }
+                                    }
+                                    elseif($h-$timeH==0){
+                                                if($m - $timeM > 30){
+                                                    echo "<td style=\"background:red;\">Not Active</td>";
+                                                }else{
+                                                    echo "<td style=\"background:#32CD32;\">Active</td>";
+                                                }
+                                    }
+                                    else{
+                                        echo "<td>LOGIC</td>";
+                                        }
+                                    echo "<td>" . $row2['TIMESTAMP']."</td>";
+
+                                echo "</tr>";
+                                }
+                                mysqli_close($conn);
+                                ?>
+  </tbody>
+</table>
+
+                            <button id="btn_close1" class="btn btn-warning" style="width:10%; margin-left:45%;margin-top: 5%;">EXIT</button>
+
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <!--  End modal    -->
+                </div>
+                <div class="col-4">
+                <div class="wrapper">
+                <div class="wrapper-content">
+                    <button id="myBtn2" class="btn btn-warning">Report</button>
+                </div>
+                <!--  start modal    -->
+
+                <div id="myModal2" class="modal">
+                    <div class="modal-content">
+                        <div class="modal_header">
+                            BUSES:
+                        </div>
+                        <div class="modal_body">
+                            <div class="row">
+                                <div class="col-6" >
+
+                                </div>
+                                <div class="col-6" >
+
+                                </div>
+                            <div class="col-12 d-flex justify-content-between">
+                                <button id="btn_close2" class="btn btn-warning" style="width:15%; margin-left:45%;margin-top: 5%;">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <!--  End modal    -->
+                </div>
+            </div>
+
+
+
             <div class="card"
                 style=" margin-top:30px;margin-right: 10px; background: rgba(245, 245, 248, 0.404); text-align: center; color: white;">
                 <div class="card-body">
@@ -132,7 +257,7 @@
                         $query='select * from bus_info where route=1';
                         $result=$conn->query($query);
                         date_default_timezone_set('Asia/Kolkata');
-                        echo "<thead>";
+                        echo "<thead class=\"thead-dark\">";
                         echo "<tr>
                                 <th><p class='h5'>Bus Id</p></th>
                                 <th><p class='h5'>Bus No</p></th>
@@ -282,7 +407,7 @@
         </div>
         </div>
     </div>
-    </div>>
+    </div>
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
@@ -291,6 +416,8 @@
 
     <script src="js/userDetails.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/alarm-modal.js"></script>
+    <script src="js/report-modal.js"></script>
     <script src="js/drag_drop.js"></script>
     <script src="js/map.js"></script>
     <script src="js/route-selector.js"></script>
