@@ -8,3 +8,5 @@ myBtn.onclick=function(){
 close.onclick=function(){
   mymodal.style.display="none";
 }
+
+
