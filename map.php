@@ -12,7 +12,7 @@
 </head>
 
 
-<body style="overflow:hidden; height: 9700px; background-image: radial-gradient( rgb(255, 6, 6), rgb(45, 45, 83)); background-repeat: no-repeat; background-size: cover;">
+<body style="overflow:hidden; height: 9700px; background-image: radial-gradient( rgb(115, 205, 221), rgb(182, 182, 253)); background-repeat: no-repeat; background-size: cover;">
     <div class="col-12 d-flex justify-content-between">
         <!-- <div class="col-4 display-6 text-white" style="padding: 20px">Welcome: </div> -->
         <div class="d-flex">
