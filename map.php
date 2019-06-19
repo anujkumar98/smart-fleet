@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-new.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>Map</title>
@@ -16,15 +17,15 @@
     <div class="col-12 d-flex justify-content-between">
         <!-- <div class="col-4 display-6 text-white" style="padding: 20px">Welcome: </div> -->
         <div class="d-flex">
-            <div class="display-5 text-white" style="padding: 20px">Welcome: </div>
-            <div class="display-5 text-white" style=" padding: 20px" id="userName"></div>
+            <div class="display-5 text-black" style="padding: 20px">Welcome: </div>
+            <div class="display-5 text-black" style=" padding: 20px" id="userName"></div>
         </div>
         <div class="display-4" style="position: absolute; left: 630px; font-family: Verdana, Geneva, Tahoma, sans-serif;color: rgb(27, 24, 168); text-shadow: 2px 2px white;">Smart Vehicle Management</div>
         <button class="btn-warning" style="padding: 10px; margin-top: 10px;margin-right: -5px;" onclick="logout();">Log Out</button>
     </div>
     <div class="row d-flex justify-content-start">
         <div class="col-1" style="margin-top:30px;">
-            <div class="sidenav text-white" style="background: rgba(250, 245, 245, 0.281); height: 820px; border-radius: 80px;">
+            <div class="sidenav text-black" style="background: rgba(250, 245, 245, 0.281); height: 820px; border-radius: 80px;">
                 <!-- <a class="h3 text-sidenav-le">Legend<br></a> -->
                 <a><img src="assets/bus_bubble_green.png">
                     <div class="text-sidenav d-flex justify-content-center"><br>Speed 0-30<br></div>
@@ -81,7 +82,7 @@
                 <!--  End modal    -->
         </div>
             <div class="card"
-                style=" margin-top:30px;margin-right: 10px; background: rgba(245, 245, 248, 0.404); text-align: center; color: white;">
+                style=" margin-top:30px;margin-right: 10px; background: rgba(245, 245, 248, 0.404); text-align: center; color: black;">
                 <div class="card-body">
                     <h5 class="card-title">ROUTES</h5>
                     <form id="mainForm" name="mainForm">
@@ -120,7 +121,7 @@
 
             <!-- ROUTE 1 -->
             <table class="table table-striped" id="bustable1"
-                        style=" margin-top:40px;right:40px; background: rgba(253, 253, 253, 0.384); color: white;">
+                        style=" margin-top:44px;right:40px; background: rgba(253, 253, 253, 0.384); color: black;">
 
 
             <?php
@@ -137,7 +138,6 @@
                                 <th><p class='h5'>Bus Id</p></th>
                                 <th><p class='h5'>Bus No</p></th>
                                 <th><p class='h5'>Timestamp</p></th>
-                                <th><p class='h5'>Systime</p></th>
                                 </tr>";
                                 echo "</thead>";
                              echo "<tbody>" ;
@@ -150,7 +150,6 @@
                                 echo "<td>" . $row['Bus_id'] . "</td>";
                                 echo "<td>" . $row['Bus_no'] . "</td>";
                                 echo "<td>" . $row2['TIMESTAMP']."</td>";
-                                echo "<td>" . date("H:i")."</td>";
                                 echo "</tr>";
                                 }
                                 echo "<tbody>" ;
@@ -163,7 +162,7 @@
                                 ?>
             </table>
             <table class="table table-striped" id="bustable2"
-                        style=" margin-top:-220px;right:40px;  background: rgba(253, 253, 253, 0.384); color: white;">
+                        style=" margin-top:-220px;right:40px;  background: rgba(253, 253, 253, 0.384); color: black;">
                                 <!-- Route2 -->
                                 <?php
                         $dbhost = "localhost";
@@ -178,7 +177,6 @@
                         <th><p class='h5'>Bus Id</p></th>
                         <th><p class='h5'>Bus No</p></th>
                         <th><p class='h5'>Timestamp</p></th>
-                        <th><p class='h5'>Systime</p></th>
                                 </tr>";
                                 echo "</thead>";
                              echo "<tbody>" ;
@@ -193,35 +191,35 @@
                                     echo "<tr>";
                                     echo "<td>" . $row['Bus_id'] . "</td>";
                                     echo "<td>" . $row['Bus_no'] . "</td>";
-                                    $timeH=(int)substr($row2['TIMESTAMP'],0,2);
-                                    $timeM=(int)substr($row2['TIMESTAMP'],3,2);
-                                    if($h - $timeH > 1){
-                                       //Time gtreater than half hour
-                                       echo "<td>Not Active g30</td>";
-                                    }
-                                    else{
-                                        if($h-$timeH==1){
-                                            $timeM=60-$timeM;
-                                            $timeM=$timeM+$m;
-                                            if($timeM > 30){
-                                                echo "<td>Not Active g31</td>";
-                                            }
-                                            else{
-                                                echo "<td>Active g31</td>";
-                                            }
-                                        }
-                                        elseif($h-$timeH==0){
-                                                if($m - $timeM > 30){
-                                                    echo "<td>Not Active g32</td>";
-                                                }else{
-                                                    echo "<td>Active g32</td>";
-                                                }
-                                        }
-                                        else{
-                                            echo "<td>Check Logic...</td>";
-                                        }
+                                    // $timeH=(int)substr($row2['TIMESTAMP'],0,2);
+                                    // $timeM=(int)substr($row2['TIMESTAMP'],3,2);
+                                    // if($h - $timeH > 1){
+                                    //    //Time gtreater than half hour
+                                    //    echo "<td>Not Active g30</td>";
+                                    // }
+                                    // else{
+                                    //     if($h-$timeH==1){
+                                    //         $timeM=60-$timeM;
+                                    //         $timeM=$timeM+$m;
+                                    //         if($timeM > 30){
+                                    //             echo "<td>Not Active g31</td>";
+                                    //         }
+                                    //         else{
+                                    //             echo "<td>Active g31</td>";
+                                    //         }
+                                    //     }
+                                    //     elseif($h-$timeH==0){
+                                    //             if($m - $timeM > 30){
+                                    //                 echo "<td>Not Active g32</td>";
+                                    //             }else{
+                                    //                 echo "<td>Active g32</td>";
+                                    //             }
+                                    //     }
+                                    //     else{
+                                    //         echo "<td>Check Logic...</td>";
+                                    //     }
 
-                                    }
+                                    // }
                                     echo "<td>" . $row2['TIMESTAMP']."</td>";
 
                                 echo "</tr>";
@@ -237,7 +235,7 @@
                                 </table>
                 <!-- Route3 -->
                 <table class="table table-striped" id="bustable3"
-                        style=" margin-top:-286px;right:40px;  background: rgba(253, 253, 253, 0.384); color: white;">
+                        style=" margin-top:-270px;right:40px;  background: rgba(253, 253, 253, 0.384); color: black;">
 
                                 <?php
                         $dbhost = "localhost";
@@ -252,7 +250,6 @@
                         <th><p class='h5'>Bus Id</p></th>
                         <th><p class='h5'>Bus No</p></th>
                         <th><p class='h5'>Timestamp</p></th>
-                        <th><p class='h5'>Systime</p></th>
                                 </tr>";
                                 echo "</thead>";
                              echo "<tbody>" ;
@@ -266,7 +263,7 @@
                                     echo "<td>" . $row['Bus_id'] . "</td>";
                                     echo "<td>" . $row['Bus_no'] . "</td>";
                                     echo "<td>" . $row2['TIMESTAMP']."</td>";
-                                    echo "<td>" . date("H:i")."</td>";
+                                    // echo "<td>" . date("H:i")."</td>";
                                 echo "</tr>";
                                 }
                                 echo "<tbody>" ;
@@ -282,7 +279,7 @@
         </div>
         </div>
     </div>
-    </div>>
+    </div>
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>

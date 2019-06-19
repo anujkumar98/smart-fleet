@@ -54,7 +54,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     background: #00000060;
     border: none;
     color: #fff;
-    cursor: crosshair;
+    cursor: pointer;
     display: inline-block;
     margin-right: 0.5rem;
     outline: none;
@@ -64,7 +64,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     background: #9faab7;
   }
   .option-input:checked {
-    background: #ff2600;
+    background: #ffffff;
   }
   .option-input:checked::before {
     height: 20px;
@@ -79,8 +79,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     -webkit-animation: click-wave 1s;
     -moz-animation: click-wave 1s;
     animation: click-wave 1s;
-    background: #e71010;
-    content: '';
+    background: #ffffff;
     display: block;
     position: relative;
   }
