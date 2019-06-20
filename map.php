@@ -54,7 +54,7 @@
                 <div class="col-4">
                 <div class="wrapper">
                 <div class="wrapper-content">
-                    <button id="myBtn" class="btn btn-warning">Maintenance</button>
+                    <button id="myBtn" class="btn btn-warning">Repair</button>
                 </div>
                 <!--  start modal    -->
 
@@ -128,7 +128,7 @@
                                     echo "<td>" . $row['Bus_no'] . "</td>";
 
                                     $timeH=(int)substr($row2['TIMESTAMP'],11,2);//hour gps
-                                    $timeM=(int)substr($row2['TIMESTAMP'],13,2);//min gps
+                                    $timeM=(int)substr($row2['TIMESTAMP'],14,2);//min gps
 
                                     if($h - $timeH > 1){
                                        //Time gtreater than half hour
@@ -163,7 +163,7 @@
   </tbody>
 </table>
 
-                            <button id="btn_close1" class="btn btn-warning" style="width:10%; margin-left:45%;margin-top: 5%;">EXIT</button>
+                            <button id="btn_close1" class="btn btn-warning" style="width:15%; margin-left:42%;margin-top: 5%;">EXIT</button>
 
 
                         </div>
@@ -173,35 +173,91 @@
                 <!--  End modal    -->
                 </div>
                 <div class="col-4">
-                <div class="wrapper">
-                <div class="wrapper-content">
-                    <button id="myBtn2" class="btn btn-warning">Report</button>
-                </div>
-                <!--  start modal    -->
+                    <div class="wrapper">
+                    <div class="wrapper-content">
+                        <button id="myBtn2" class="btn btn-warning">Report</button>
+                    </div>
+                    <!--  start modal    -->
+                    <div id="myModal2" class="modal">
+                        <div class="modal-content">
+                            <div class="modal_header h4">
+                                REPORT
+                            </div>
+                            <div class="modal_body">
+                            <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Bus ID</th>
+          <th scope="col">Bus No</th>
+          <th scope="col">Current Speed</th>
+          <th scope="col">Running Time</th>
+        </tr>
+      </thead>
+      <tbody>
+      <?php
+                            $dbhost = "localhost";
+                            $dbuser = "root";
+                            $dbpass = "";
+                            $db = "bus_details";
+                            $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
+                            $query='select * from bus_info';
+                            $result=$conn->query($query);
+                            date_default_timezone_set('Asia/Kolkata');
+                                    while($row = mysqli_fetch_array($result))
+                                    {
+                                        $dum=$row['Bus_no'];
+                                        $result2=$conn->query("SELECT TIMESTAMP,SPEED FROM bus WHERE EQPT_ID='$dum' AND IO_VALUE LIKE '1%' ORDER BY TIMESTAMP DESC LIMIT 1");
+                                        $row2=mysqli_fetch_array($result2);
+                                        echo "<tr>";
+                                        echo "<td>" . $row['Bus_id'] . "</td>";
+                                        echo "<td>" . $row['Bus_no'] . "</td>";
+                                        $s=(int) $row2['SPEED'];
+                                        if($s>30){
+                                            echo "<td style=\"background:red\">" . $row2['SPEED']."</td>";
+                                        }
+                                        else{
+                                            echo "<td style=\"background:green\">" . $row2['SPEED']."</td>";
+                                        }
+                                        $result3=$conn->query("SELECT TIMESTAMP,SPEED FROM bus WHERE EQPT_ID='$dum' AND IO_VALUE LIKE '0%' ORDER BY TIMESTAMP DESC LIMIT 1");
+                                        $row3=mysqli_fetch_array($result3);
+                                        $timeHON=(int)substr($row2['TIMESTAMP'],11,2);//hour gps on
+                                        $timeMON=(int)substr($row2['TIMESTAMP'],14,2);//min gps on
+                                        $timeHOFF=(int)substr($row3['TIMESTAMP'],11,2);//hour gps off
+                                        $timeMOFF=(int)substr($row3['TIMESTAMP'],14,2);//hour gps off
 
-                <div id="myModal2" class="modal">
-                    <div class="modal-content">
-                        <div class="modal_header">
-                            BUSES:
-                        </div>
-                        <div class="modal_body">
-                            <div class="row">
-                                <div class="col-6" >
+                                        if($timeHOFF-$timeHON == 0){
+                                            $h=0;
+                                            $m=$timeMOFF-$timeMON;
+                                        }
+                                        elseif($timeHOFF-$timeHON > 0) {
+                                            $m=60-$timeMON+$timeMOFF;
+                                            $h=($timeHOFF-$timeHON -1)*60;
+                                        }
+                                        else{
+                                            $m=0;
+                                            $h=0;
+                                        }
+                                        $t=$m+$h;
+                                        echo "<td>" . $t . " Mins</td>";
 
-                                </div>
-                                <div class="col-6" >
 
-                                </div>
-                            <div class="col-12 d-flex justify-content-between">
-                                <button id="btn_close2" class="btn btn-warning" style="width:15%; margin-left:45%;margin-top: 5%;">Close</button>
+                                    echo "</tr>";
+                                    }
+                                    mysqli_close($conn);
+                                    ?>
+      </tbody>
+    </table>
+
+                                <button id="btn_close2" class="btn btn-warning" style="width:15%; margin-left:42%;margin-top: 5%;">EXIT</button>
+
+
                             </div>
                         </div>
-                        </div>
                     </div>
-                </div>
-                </div>
-                <!--  End modal    -->
-                </div>
+                    </div>
+                    <!--  End modal    -->
+                    </div>
+
             </div>
 
 

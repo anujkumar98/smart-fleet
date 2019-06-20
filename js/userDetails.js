@@ -6,6 +6,9 @@ function logout() {
         alert("Error: " + error);
     });
 }
+function report(){
+    window.open("report.html","_self");
+}
 function getDetails() {
     var user = firebase.auth().currentUser;
     var name, email, photoUrl, uid, emailVerified;
